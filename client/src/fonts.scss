@@ -1,0 +1,111 @@
+@import './colors.scss';
+@import './App.scss';
+
+/* Font Imports */
+
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: './assets/GlobalFont/AvenirNextProLT/LinotypeAvenirNextLTProRegular.otf';
+}
+@font-face {
+    font-family: 'Avenir Next Demi-Bold';
+    src: './assets/GlobalFont/AvenirNextProLT/LinotypeAvenirNextLTProDemi.otf';
+}
+@font-face {
+    font-family: 'Avenir Next Bold';
+    src: './assets/GlobalFont/AvenirNextProLT/LinotypeAvenirNextLTProBold.otf';
+}
+
+/* Mixins */
+
+@mixin hero-header () {
+    font-family:'Avenir Next Bold', sans-serif;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    color: $black;
+}
+
+@mixin h1-header () {
+    font-family:'Avenir Next Bold', sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    color: $black;
+}
+
+@mixin h2-header () {
+    font-family:'Avenir Next Demi-Bold', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $black;
+}
+
+@mixin subheader () {
+    font-family:'Avenir Next Demi-Bold', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: $black;
+}
+
+@mixin paragraph () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    color: $black;
+}
+
+@mixin list () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: $black;
+}
+
+@mixin label () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $silver;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Mobile Mixins */
+
+@mixin m-h1-header () {
+    font-family:'Avenir Next Bold', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $black;
+}
+
+@mixin m-h2-header () {
+    font-family:'Avenir Next Demi-Bold', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    color: $black;
+}
+
+@mixin m-paragraph () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    color: $black;
+}
+
+@mixin m-list () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    color: $black;
+}
+
+@mixin m-label () {
+    font-family:'Avenir Next Regular', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: $silver;
+    text-transform: uppercase;
+    font-weight: 600;
+}
