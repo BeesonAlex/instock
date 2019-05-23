@@ -8,12 +8,12 @@ const getData = (req, res) => {
 
 let inventoryId = 8;
 const createInventoryId = () => {
-    return inventoryId++;
+    return `I${inventoryId++}`;
 }
 
 let warehouseId = 5;
 const createWarehouseId = () => {
-   return warehouseId++;
+   return `W${warehouseId++}`;
 }
 
 const createNewInventoryItem = (req, res) => {
