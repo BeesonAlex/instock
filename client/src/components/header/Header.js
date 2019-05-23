@@ -17,4 +17,4 @@ import '../../App.scss'
     )
 }
 
-export default Header
+export default Header;

@@ -1,14 +1,12 @@
 @import '../../colors.scss';
 @import '../../fonts.scss';
 @import '../../App.scss';
-body {
-    font-family: 'Avenir Next Bold';
-}
+
 .nav-bar {
-    height: 5rem;
     display: flex; 
     flex-direction: column;
     align-items: center;
+    height: 5rem;
     background-color: $black;
     color: $white;
     @include tablet {
@@ -30,8 +28,8 @@ body {
     &__tabs {
         display: flex;
         list-style-type: none;
-        padding: 0;
         width: 100%;
+        padding: 0;
         margin: 0;
         @include tablet {
             height: 100%;
@@ -66,6 +64,7 @@ body {
         }
         &--current {
             border-bottom: 4px solid $mercury;
+            font-family: 'Avenir Next Demi'
         }
     }
 }
