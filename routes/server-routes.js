@@ -7,7 +7,7 @@ const getData = (req, res) => {
 }
 
 app.route('/data')
-    .get(getData);
+.get(getData);
 
 
 router.get('/', getAllVideos);
