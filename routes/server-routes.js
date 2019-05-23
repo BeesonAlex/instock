@@ -21,16 +21,17 @@ const createWarehouseId = () => {
 }
 
 const createNewInventoryItem = (req, res) => {
-    const {itemName, lastOrdered, city, country, quantity, status, itemDescription} = req.body;
+    const {itemName, lastOrdered, city, province, quantity, isInStock, itemDescription, categories} = req.body;
     const newProduct = {
         id: createInventoryId(),
         productName: itemName,
         itemDescription,
         quantity,
         lastOrdered,
-        location: `${city}, ${country}`,
-        status,
+        location: `${city}, ${province}`,
+        statu: isInStock,
         categories,
+        warehouseId: `W${Math.floor(Math.random() * warehouseArray.length)}`,
     };
     inventoryArray.push(newProduct);
     res.json(newProduct);
@@ -38,10 +39,10 @@ const createNewInventoryItem = (req, res) => {
 
 
 const createNewWarehouse = (req, res) => {
-    const {warehouseName, street, suiteNum, city, province, postal, contactName, title, phone, email} = req.body;
+    const {warehouseName, street, suiteNum, city, province, postal, contactName, title, phone, email, inventoryCategories} = req.body;
     const newWarehouse = {
         id: createWarehouseId(),
-        warehouseName,
+        name: warehouseName,
         address: {
             street,
             suiteNum,
@@ -50,7 +51,7 @@ const createNewWarehouse = (req, res) => {
             postal,
         },
         contact: {
-            contactName,
+            name: contactName,
             position: title,
             phone,
             email,
