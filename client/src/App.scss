@@ -1,5 +1,6 @@
 /* This file determines initial browser reset and layout mixins for responsive design */
-// @import './colors.scss';
+//@import './fonts.scss';
+@import './colors.scss';
 
 /* Layout Variables */
 
@@ -44,27 +45,4 @@ $mobile: 320px;
         text-decoration: none;
     }  
 
-    main {
-        @include desktop {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        }
-
-        .video-player {
-            @include desktop {
-                width: 100%;
-            }
-        }
-
-        .layout__comments-details {
-            @include desktop {
-                width: 44.5rem;
-            }
-
-        }
-        .video-queue {
-
-        }
-    }
 }
