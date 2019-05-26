@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './warehouses.scss';
 
 export class WarehouseItem extends Component {
     render() {
