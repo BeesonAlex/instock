@@ -1,7 +1,6 @@
 @import '../../colors.scss';
 @import '../../fonts.scss';
 @import '../../App.scss';
-
 .nav-bar {
     display: flex; 
     flex-direction: column;
@@ -40,10 +39,13 @@
             align-items: flex-end;
         } 
         &--inventory, &--locations {
+            font-family: "Avenir Next Demi";
             width: 100%;
             text-align: center;
             font-size: 1rem;
             height: 100%;
+            padding-bottom: 8px;
+            color: $silver;
             @include tablet {
                 height: 2.7rem;
                 width: 6rem;
@@ -59,12 +61,10 @@
             color: $white;
             text-decoration: none;
         }
-        &--locations, &--inventory {
-            padding-bottom: 8px;
-        }
         &--current {
             border-bottom: 4px solid $mercury;
-            font-family: 'Avenir Next Demi'
+            font-family: 'Avenir Next Demi';
+            color: $white;
         }
     }
 }
