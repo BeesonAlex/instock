@@ -9,11 +9,10 @@ class Router extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Test}/>
-                    <Route path="/Locations" exact component={Test}/>
-                    <Route path="/Locations/:id" exact component={Test}/>
+                    <Route path="/Warehouses" exact component={Test}/>
+                    <Route path="/Warehouses/:id" exact component={Test}/>
                     <Route path="/Inventory" exact component={Test}/>
                     <Route path="/Inventory/:id" exact component={Test}/>
-                    <Route path="/CreateNew" component={Test}/>
                 </Switch>
           </BrowserRouter>
         )
