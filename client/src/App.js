@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header'
-import Inventory from './components/inventory/Inventory'
+import Header from './components/header/Header';
+import Main from './Main';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Inventory />
+      <Main />
     </div>
   );
 }
