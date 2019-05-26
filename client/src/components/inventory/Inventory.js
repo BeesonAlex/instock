@@ -1,5 +1,6 @@
 import React from 'react';
 import searchIcon from '../../assets/Icons/SVG/Icon-search.svg'
+import addIcon from '../../assets/Icons/SVG/Icon-add.svg'
 import InventoryItem from './InventoryItem'
 import './inventory.scss';
 
@@ -13,7 +14,6 @@ class Inventory extends React.Component {
                         <img className="header__search--searchIcon" src={searchIcon} alt="search icon"/>
                         <input className="header__search--input" placeholder="Search" />
                     </div>
-                    
                 </div>
                 <div className="subheadings">
                     <h3 className="product__item product__heading">ITEM</h3>
@@ -22,7 +22,9 @@ class Inventory extends React.Component {
                     <h3 className="product__quantity product__heading">QUANTITY</h3>
                     <h3 className="product__status product__heading">STATUS</h3>
                 </div>
-                
+                <div>
+                    <button className="add-inventory-button" type='button'><img src={addIcon} alt="add icon"/></button>
+                </div>
                 <section className="inventoryItems">
                     {
                         this.props.inventory.map((inventory, id) => {
