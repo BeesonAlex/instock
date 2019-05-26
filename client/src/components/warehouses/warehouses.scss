@@ -2,29 +2,181 @@
 @import '../../colors.scss';
 @import '../../fonts.scss';
 
-.section__header {
-    @include m-h1-header;
-    padding: 2rem 0rem 1.5rem 0rem;
 
-    @include tablet() {
-        @include h1-header();
+.warehouses-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0rem 1rem 1rem 1rem;
+
+    @include tablet {
+        margin: 0rem 1.5rem 1rem 1.5rem;
+    }
+
+    @include desktop {
+        margin: 0rem 11.25rem 0rem 11.25rem;
     }
     
-    @include desktop() {
-        padding: 3rem 0rem 4rem 0rem;
+    .title-search-wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 0.5rem;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            align-items: flex-start;
+            margin-bottom: 0rem;
+        }
+
+        .section__header {
+            @include m-h1-header;
+            padding: 2rem 0rem 1rem 0rem;
+        
+            @include tablet() {
+                padding: 3rem 0rem 0rem 0rem;
+                @include h1-header();
+            }
+            
+            @include desktop() {
+                padding: 3rem 0rem 3rem 0rem;
+            }
+        }
+
+        .navbar__search {
+            height: 3rem;
+            width: 15.3125rem;
+            border: 1px solid grey;
+            border-radius: 0.3125rem;
+            padding-left: 3rem;
+            background: url('../../assets/Icons/SVG/Icon-search.svg') no-repeat;
+            background-position: 1rem 50%;
+            background-color: $alabaster;
+            color: $black;
+
+            @include tablet {
+                margin-top: 2.5rem;
+            }
+        }
     }
-}
 
-.navbar__search {
-    height: 3rem;
-    width: 100%;
-    border: 1px solid grey;
-    border-radius: 0.5rem;
-    padding-left: 3rem;
-    background: url('../../assets/Icons/SVG/Icon-search.svg') no-repeat;
-    background-position: 1rem 50%;
+    .warehouses-item-wrapper {
 
-    @include m-paragraph();
-    color: $black;
+        #table-labels {
+            display: none;
+            margin-top: 0rem;
 
+            @include desktop {
+                display: flex;
+                border-bottom: none;
+            }
+
+            @include label;
+            text-align: left;
+
+            .table-label-wrapper {
+                width: 25%;
+            }
+
+            .arrow-right-placeholder {
+                width: 0.6875rem;
+            }
+            
+        }
+        
+        .warehouses__warehouse-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $mercury;
+            margin-top: 1.5rem;
+
+            .warehouse-item__entry-text-wrapper {
+                @include tablet {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+            #warehouse-item__entry-text--first-child {
+                @include tablet {
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+
+                @include desktop {
+                    width: 25%;
+                }
+            }
+            
+            .warehouse-item__entry-wrapper {
+                margin-bottom: 1.5rem;
+
+                @include tablet {
+                    width: 25%;
+                }
+
+                .warehouse-item__entry {
+                    text-align: left;
+                    @include m-paragraph;
+
+                    @include tablet {
+                        @include paragraph;
+                    }
+                }
+                
+                .warehouse-item__entry--name {
+                    @include m-h2-header;
+
+                    @include tablet {
+                        @include subheader;
+                    }
+
+                }
+                
+                .warehouse-item__entry--title {
+                    font-style: italic;
+                }
+            }
+        }
+                .link-to-warehouse-details {
+                    justify-self: flex-end;
+                }
+        }
+    }
+
+    .add-warehouse-button {
+        width: 4rem;
+        height: 4rem;
+        background-color: $instock-blue;
+        border-radius: 50%;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+
+        &:hover {
+            background-color: $instock-blue-dark;
+        }
+
+        @include tablet {
+            right: 10%;
+        }
+        
+        @include tablet {
+            width: 5rem;
+            height: 5rem;
+            right: 15%;
+        }
+    }
 }

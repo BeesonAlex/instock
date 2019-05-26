@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import WarehouseItem from './WarehouseItem';
 import './warehouses.scss'
+import addIcon from '../../assets/Icons/SVG/Icon-add.svg'
 
 export class Warehouses extends Component {
 
@@ -36,7 +37,6 @@ export class Warehouses extends Component {
                 this.setState({
                     warehouses: response.data.warehouseArray,
                 })
-                console.log(this.state.warehouses)
             })
             .catch(error => {
                 console.log(error)
@@ -53,13 +53,29 @@ export class Warehouses extends Component {
                     <input className="navbar__search" type="text" name="search" placeholder="Search"></input>
                 </div>
                 <div className="warehouses-item-wrapper">
-                {
-                    this.state.warehouses.map(warehouse => {
-                        return <WarehouseItem key={warehouse.id} warehouseInfo={warehouse} />
-                })
-                }
+                    <div className="warehouses__warehouse-item" id="table-labels">
+                        <div className="table-label-wrapper">
+                            <p className="table-label">Warehouse</p>
+                        </div>
+                        <div className="table-label-wrapper">
+                            <p className="table-label">Contact</p>
+                        </div>
+                        <div className="table-label-wrapper">
+                            <p className="table-label">Contact Information</p>
+                        </div>
+                        <div className="table-label-wrapper">
+                            <p className="table-label">Categories</p>
+                        </div>
+                        <div className="arrow-right-placeholder"></div>
+                    </div>
+                    {
+                        this.state.warehouses.map(warehouse => {
+                            return <WarehouseItem key={warehouse.id} warehouseInfo={warehouse} />
+                        })
+                    }
 
                 </div>
+                <div className="add-warehouse-button"><img src={addIcon} alt="add-Icon" /></div>
             </div>
         )
     }

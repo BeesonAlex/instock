@@ -10,10 +10,10 @@ class Router extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Warehouses}/>
-                    <Route path="/Warehouses" exact component={Warehouses}/>
-                    <Route path="/Warehouses/:id" exact component={Test}/>
-                    <Route path="/Inventory" exact component={Test}/>
-                    <Route path="/Inventory/:id" exact component={Test}/>
+                    <Route path="/warehouses" exact component={Warehouses}/>
+                    <Route path="/warehouses/:id" exact component={Test}/>
+                    <Route path="/inventory" exact component={Test}/>
+                    <Route path="/inventory/:id" exact component={Test}/>
                 </Switch>
           </BrowserRouter>
         )
