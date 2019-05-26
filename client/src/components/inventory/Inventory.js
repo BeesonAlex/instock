@@ -3,8 +3,24 @@ import searchIcon from '../../assets/Icons/SVG/Icon-search.svg'
 import addIcon from '../../assets/Icons/SVG/Icon-add.svg'
 import InventoryItem from './InventoryItem'
 import './inventory.scss';
+import axios from 'axios';
 
 class Inventory extends React.Component {
+    state = {
+        inventory: []
+      }
+
+      componentDidMount() {    
+          axios.get(`http://localhost:8080/data/inventory/`)
+          .then(response => {
+            const inventory = response.data.inventoryArray;
+            this.setState({inventory});
+          })
+          .catch(error => {
+            console.log(error)
+          })
+        }
+
     render() {
         return (
             <section className="inventoryList">
@@ -27,7 +43,7 @@ class Inventory extends React.Component {
                 </div>
                 <section className="inventoryItems">
                     {
-                        this.props.inventory.map((inventory, id) => {
+                        this.state.inventory.map((inventory, id) => {
                             return <InventoryItem className="inventoryItem" key={id} product={inventory}/>
                         })
                     }
