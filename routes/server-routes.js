@@ -2,6 +2,8 @@ const { Router } = require('express');
 const {inventoryArray, warehouseArray} = require('../data/data');
 const router = Router();
 
+
+// Inventory GET
 const getAllInventory = (req, res) => {
     res.json({inventoryArray})
 }
@@ -10,6 +12,17 @@ const getSingleProduct = (req, res) => {
     res.json(targetProduct)
 }
 
+// Warehouses GET
+const getAllWarehouses = (req, res) => {
+    res.json({warehouseArray})
+}
+
+const getSingleWarehouse = (req, res) => {
+    targetWarehouse = warehouseArray.find(warehouse => warehouse.id == req.params.id)
+    res.json(targetWarehouse)
+}
+
+// POST Create New Warehouse/Inventory Item
 let inventoryId = 8;
 const createInventoryId = () => {
     return `I${inventoryId++}`;
@@ -67,6 +80,8 @@ router.post('/inventory',createNewInventoryItem);
 router.post('/warehouses', createNewWarehouse);
 router.get('/inventory', getAllInventory);
 router.get('/inventory/:id', getSingleProduct);
+router.get('/warehouses', getAllWarehouses);
+router.get('/warehouses/:id', getSingleWarehouse);
 
 module.exports = router;
 
