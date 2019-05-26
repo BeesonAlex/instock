@@ -1,12 +1,23 @@
 @import '../../colors.scss';
 @import '../../fonts.scss';
 @import '../../App.scss';
-
+//mobile grid: 16/54/24
+//tablet grid: 24/100/24
+//desktop grid: 180/68/24
 .inventoryList {
     margin: 0 1rem;
+    @include tablet {
+        margin: 0 1.5rem;
+    }
+    @include desktop {
+        margin: 0 180px;
+    }
 }
 .header {
-
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
     &__title {
         @include h1-header;
         margin-top: 2rem;
@@ -22,6 +33,11 @@
         margin-bottom: 2rem;
         border-radius: 4px;
         background-color: $alabaster;
+        @include tablet {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            width: 15rem;
+        }
         &--searchIcon {
             margin: 0 1rem;
         }
@@ -29,10 +45,30 @@
 }
 .subheadings {
     display: none;
+    @include tablet {
+        display: flex;
+    }
+    @include tablet {
+        display: flex;
+    }
 }
 .product {
     padding-bottom: 1rem;
     border-bottom: 2px solid $mercury;
+    justify-content: center;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+    }
+    &__detail {
+        @include tablet {
+            width: 17rem;
+            margin-right: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+    }
     &__top {
         display: flex;
         justify-content: space-between;
@@ -41,6 +77,9 @@
         color: $mercury;
         font-family: 'Avenir Next Bold';
         margin: 1rem 0;
+        @include tablet {
+            display: none;
+        }
     }
     &__name {
         margin-bottom: 1rem;
@@ -49,11 +88,39 @@
     &__description {
         margin-bottom: 0.5rem;
     }
+    &__icon {
+        @include tablet {
+            display: none;
+        }
+        @include desktop {
+            display: none;
+        }
+    }
+    &__icon2 {
+        display: none;
+        @include tablet {
+            display: flex;
+        }
+        @include desktop {
+            display: flex;
+        }
+    }
+}
+.show-headings {
+    display: none;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .add-inventory-button {
     width: 4rem;
     height: 4rem;
-    background-color: blue;
+    background-color: #002F5F;
     border-radius: 50%;
     display:flex;
     justify-content: center;
@@ -61,7 +128,10 @@
     position: fixed;
     bottom: 10%;
     right: 5%;
-    // &:hover {
-    //     background-color: $instock-blue-dark;
-    // }
+    &:hover {
+        background-color: #0065AD;
+    }
+}
+#item {
+    margin-right: 10rem;
 }

@@ -15,12 +15,12 @@ class Inventory extends React.Component {
                         <input className="header__search--input" placeholder="Search" />
                     </div>
                 </div>
-                <div className="subheadings">
-                    <h3 className="product__item product__heading">ITEM</h3>
-                    <h3 className="product__lastOrdered product__heading">LAST ORDERED</h3>
-                    <h3 className="product__location product__heading">LOCATION</h3>
-                    <h3 className="product__quantity product__heading">QUANTITY</h3>
-                    <h3 className="product__status product__heading">STATUS</h3>
+                <div className="subheadings show-headings">
+                    <h3 className="product__item product__heading show-headings" id="item">ITEM</h3>
+                    <h3 className="product__lastOrdered product__heading show-headings">LAST ORDERED</h3>
+                    <h3 className="product__location product__heading show-headings">LOCATION</h3>
+                    <h3 className="product__quantity product__heading show-headings">QUANTITY</h3>
+                    <h3 className="product__status product__heading show-headings">STATUS</h3>
                 </div>
                 <div>
                     <button className="add-inventory-button" type='button'><img src={addIcon} alt="add icon"/></button>

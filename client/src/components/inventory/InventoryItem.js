@@ -11,7 +11,7 @@ class InventoryItem extends React.Component {
                     <h3 className="product__item product__heading">ITEM</h3>
                     <img className="product__icon" src={kebabIcon} alt="kebab icon"/>
                 </div>
-                <div className="product__detail">
+                <div className="product__group">
                     <h3 className="product__name">{name}</h3>
                     <p className="product__description product__detail">{description}</p>
                 </div>
@@ -23,6 +23,7 @@ class InventoryItem extends React.Component {
                 <h3 className="product__quantity product__detail">{quantity}</h3>
                 <h3 className="product__status product__heading">STATUS</h3>
                 <h3 className="product__status product__detail">{isInstock ? 'In Stock' : 'Out of Stock'}</h3>
+                <img className="product__icon2" src={kebabIcon} alt="kebab icon"/>
             </div>
         )
     }
