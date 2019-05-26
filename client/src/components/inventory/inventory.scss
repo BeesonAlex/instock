@@ -30,8 +30,22 @@
     display: none;
 }
 .product {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $mercury;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
     &__heading {
         color: $mercury;
         font-family: 'Avenir Next Bold';
+        margin: 1rem 0;
+    }
+    &__name {
+        margin-bottom: 1rem;
+        font-family: 'Avenir Next Demi';
+    }
+    &__description {
+        margin-bottom: 0.5rem;
     }
 }

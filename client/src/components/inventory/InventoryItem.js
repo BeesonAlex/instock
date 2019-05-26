@@ -1,12 +1,16 @@
 import React from 'react';
 import './inventory.scss';
+import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
 
 class InventoryItem extends React.Component {
     render() {
         const { name, description, lastOrdered, location, quantity, isInstock } = this.props.product;
         return (
             <div className="product">
-                <h3 className="product__item product__heading">ITEM</h3>
+                <div className="product__top">
+                    <h3 className="product__item product__heading">ITEM</h3>
+                    <img className="product__icon" src={kebabIcon} alt="kebab icon"/>
+                </div>
                 <div className="product__detail">
                     <h3 className="product__name">{name}</h3>
                     <p className="product__description product__detail">{description}</p>
@@ -18,7 +22,7 @@ class InventoryItem extends React.Component {
                 <h3 className="product__quantity product__heading">QUANTITY</h3>
                 <h3 className="product__quantity product__detail">{quantity}</h3>
                 <h3 className="product__status product__heading">STATUS</h3>
-                <h3 className="product__status product__detail">{isInstock}</h3>
+                <h3 className="product__status product__detail">{isInstock ? 'In Stock' : 'Out of Stock'}</h3>
             </div>
         )
     }
