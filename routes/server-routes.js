@@ -23,6 +23,15 @@ const getSingleWarehouse = (req, res) => {
 	res.json(targetWarehouse);
 };
 
+const getWarehouseInventory = (req,res) => {
+	
+	targetInventory = inventoryArray.filter(
+		inventory => inventory.warehouseId == req.params.id
+	);
+	res.json(targetInventory);
+	
+}
+
 // POST Create New Warehouse/Inventory Item
 let inventoryId = 8;
 const createInventoryId = () => {
@@ -102,5 +111,6 @@ router.get("/inventory", getAllInventory);
 router.get("/inventory/:id", getSingleProduct);
 router.get("/warehouses", getAllWarehouses);
 router.get("/warehouses/:id", getSingleWarehouse);
+router.get("/warehouses/inventory/:id", getWarehouseInventory);
 
 module.exports = router;
