@@ -1,0 +1,70 @@
+@import '../../colors.scss';
+@import '../../fonts.scss';
+@import '../../App.scss';
+.nav-bar {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
+    background-color: $black;
+    color: $white;
+    @include tablet {
+        flex-direction: row;
+    }   
+    @include desktop {
+        padding-left: 180px;
+        flex-direction: row;
+    }   
+    &__logo {
+        margin: 1rem;
+        @include tablet {
+            margin: 2rem;
+        } 
+        @include desktop {
+            margin: 2rem 0;
+        } 
+    }
+    &__tabs {
+        display: flex;
+        list-style-type: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        @include tablet {
+            height: 100%;
+            align-items: flex-end;
+        } 
+        @include desktop {
+            height: 100%;
+            align-items: flex-end;
+        } 
+        &--inventory, &--locations {
+            font-family: "Avenir Next Demi";
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            height: 100%;
+            padding-bottom: 8px;
+            color: $silver;
+            @include tablet {
+                height: 2.7rem;
+                width: 6rem;
+                margin-left: 3rem;
+            } 
+            @include desktop {
+                height: 2.7rem;
+                width: 80px;
+                margin-left: 54px;
+            } 
+        }
+        &--link {
+            color: $white;
+            text-decoration: none;
+        }
+        &--current {
+            border-bottom: 4px solid $mercury;
+            font-family: 'Avenir Next Demi';
+            color: $white;
+        }
+    }
+}

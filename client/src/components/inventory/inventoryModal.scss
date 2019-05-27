@@ -1,0 +1,237 @@
+.modal-wrapper-hide {
+   display: none;
+}
+
+.modal-wrapper-show {
+   position: fixed;
+   top: 0;
+   background: rgba(0, 0, 0, 0.6);
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   & .modal-form-wrapper {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      // top: 5%;
+      // left: 5%;
+      background-color: white;
+      overflow-y: scroll;
+      // overflow-x: hidden;
+
+      & .modal-header {
+         width: 80%;
+         margin-left: 10%;
+      }
+
+      & .modal-body {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         width: 80%;
+         margin-bottom: 10%;
+         margin-left: 10%;
+
+         & .main-modal-div {
+            display: flex;
+            width: 100%;
+
+            & .modal-form {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+
+               & .first-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .product-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .product-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .product-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .last-order-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .order-date-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .order-date-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .second-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .city-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .city-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .city-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .country-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .country-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .country-dropdown {
+                        border-radius: 5px;
+                        height: 4rem;
+                        font-size: 1.25rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .third-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .quantity-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .quantity-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .quantity-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .status-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .status-switch-div {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                     }
+                  }
+               }
+
+               & .fourth-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .item-label {
+                     margin: 0.5rem 0;
+                  }
+
+                  & .item-description {
+                     border-radius: 5px;
+                     height: 5rem;
+                     padding-top: 1rem;
+                     text-indent: 1rem;
+                     outline: none;
+                  }
+               }
+            }
+         }
+      }
+
+      & .modal-footer {
+         display: flex;
+         flex-direction: column-reverse;
+         width: 80%;
+         margin-left: 10%;
+
+         & .btn-cancel {
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: white;
+            color: #0095FF;
+            font-size: 1.25rem;
+         }
+
+         & .btn-cancel:hover {
+            border: 1px solid #0065AD;
+            background-color: #0065AD;
+            color: white;
+         }
+
+         & .btn-save {
+            border: 1px solid #0095FF;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: #0095FF;
+            color: white;
+            font-size: 1.25rem;
+         }
+
+         & .btn-save:hover {
+            border: 1px solid #0065AD;
+            background-color: #0065AD;
+         }
+      }
+   }
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+::-webkit-scrollbar-track {
+   box-shadow: inset 0 0 5px grey; 
+   border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+   box-shadow: inset 0 0 5px grey; 
+   border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #0065AD; 
+}

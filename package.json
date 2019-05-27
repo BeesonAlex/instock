@@ -1,0 +1,26 @@
+{
+  "name": "instock",
+  "version": "1.0.0",
+  "description": "Brainstation Project: Instock",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeesonAlex/instock.git"
+  },
+  "author": "Alex, Danbi, Ash, Ian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeesonAlex/instock/issues"
+  },
+  "homepage": "https://github.com/BeesonAlex/instock#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "nodemon": "^1.19.1"
+  }
+}
