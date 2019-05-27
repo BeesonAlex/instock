@@ -19,18 +19,17 @@ const getAllWarehouses = (req, res) => {
 const getSingleWarehouse = (req, res) => {
 	targetWarehouse = warehouseArray.find(
    	warehouse => warehouse.id == req.params.id
-  	);
-	res.json(targetWarehouse);
-};
-
-const getWarehouseInventory = (req,res) => {
-	
-	targetInventory = inventoryArray.filter(
-		inventory => inventory.warehouseId == req.params.id
 	);
-	res.json(targetInventory);
-	
-}
+	targetInventory = inventoryArray.filter(
+	inventory => inventory.warehouseId == req.params.id
+	);
+	if (!targetWarehouse) {
+       res.status(404).json("There is no warehouse with that ID!");
+   }
+   else{
+	   res.json({targetWarehouse, targetInventory});
+   }
+};
 
 // POST Create New Warehouse/Inventory Item
 let inventoryId = 8;
@@ -111,6 +110,5 @@ router.get("/inventory", getAllInventory);
 router.get("/inventory/:id", getSingleProduct);
 router.get("/warehouses", getAllWarehouses);
 router.get("/warehouses/:id", getSingleWarehouse);
-router.get("/warehouses/inventory/:id", getWarehouseInventory);
 
 module.exports = router;
