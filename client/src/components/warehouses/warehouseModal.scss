@@ -2,6 +2,11 @@
 @import '../../fonts.scss';
 @import '../../App.scss';
 
+@keyframes modalShow {
+	from {top: -700px;}
+	to {top: 0;}
+}
+
 .modal-wrapper-hide {
    display: none;
 }
@@ -14,7 +19,9 @@
    height: 100%;
    display: flex;
    flex-direction: column;
-   align-items: flex-start;
+	align-items: flex-start;
+	animation-name: modalShow;
+   animation-duration: 0.5s;
 
    & .modal-form-wrapper {
       border-radius: 5px;
@@ -22,11 +29,34 @@
       height: 100%;
       position: fixed;
       background-color: white;
-      overflow-y: scroll;
+		overflow-y: scroll;
+		animation-name: modalShow;
+      animation-duration: 1s;
+		animation-timing-function: ease-in;
+		
+		@include tablet {
+         width: 65%;
+         height: 90%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+		}
+		
+		@include desktop {
+         width: 576px;
+         height: 624px;
+      }
 
       & .modal-header {
+         @include m-h1-header;
          width: 80%;
          margin-left: 10%;
+         margin-bottom: 1rem;
+			margin-top: 2rem;
+			
+			@include tablet {
+            @include h1-header;
+         }
       }
 
       & .modal-body {
@@ -48,169 +78,281 @@
 
                & .first-form-div {
                   display: flex;
-                  flex-direction: column;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+                     justify-content: space-between;
+                  }
 
                   & .warehouse-div {
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .warehouse-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .warehouse-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
-                        outline: none;
+								outline: none;
+								
+								@include tablet {
+                           width: 100%;
+                        }
                      }
                   }
 
                   & .empty-div {
                      display: none;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .empty-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .empty-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
-                        outline: none;
+								outline: none;
+								
+								@include tablet {
+                           width: 100%;
+                        }
                      }
                   }
                }
 
                & .second-form-div {
                   display: flex;
-                  flex-direction: column;
+						flex-direction: column;
+						
+						 @include tablet {
+                     flex-direction: row;
+                     justify-content: space-between;
+                  }
 
                   & .address-div {
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .address-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .address-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
                      }
                   }
 
                   & .location-div {
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .location-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .location-dropdown {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 4rem;
                         font-size: 1.25rem;
+                        text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                           height: 3rem;
+                        }
                      }
                   }
                }
 
                & .third-form-div {
                   display: flex;
-                  flex-direction: column;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+                     justify-content: space-between;
+                  }
 
                   & .contact-div {
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .contact-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .contact-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
                      }
                   }
 
                   & .position-div {
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                        justify-content: space-around;
+                     }
 
                      & .position-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .position-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
                      }
                   }
                }
 
                & .fourth-form-div {
+						border: 2px solid red;
                   display: flex;
-                  flex-direction: column;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+							justify-content: space-between;
+                  }
 
                   & .phNumber-div {
+							border: 2px solid blue;
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .phNumber-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .phNumber-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
                      }
                   }
 
                   & .email-div {
+							border: 2px solid green;
                      display: flex;
                      flex-direction: column;
-                     margin-bottom: 1rem;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
 
                      & .email-label {
+								@include m-label;
                         margin: 0.5rem 0;
                      }
 
                      & .email-input {
+                        border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
                         text-indent: 1rem;
                         outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
                      }
                   }
                }
 
                & .fifth-form-div {
                   display: flex;
-                  flex-direction: column;
+						flex-direction: column;
+						
+						@include tablet {
+                     width: 100%;
+                  }
 
                   & .item-label {
+							@include m-label;
                      margin: 0.5rem 0;
                   }
 
                   & .item-description {
+                     border: 2px solid $text-field-border;
                      border-radius: 5px;
                      height: 5rem;
                      padding-top: 1rem;
@@ -226,7 +368,13 @@
          display: flex;
          flex-direction: column-reverse;
          width: 80%;
-         margin-left: 10%;
+			margin-left: 10%;
+			
+			@include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 80%;
+         }
 
          & .btn-cancel {
             border: none;
@@ -235,7 +383,12 @@
             height: 3.5rem;
             background-color: white;
             color: #0095FF;
-            font-size: 1.25rem;
+				font-size: 1.25rem;
+				font-family:'Avenir Next Demi-Bold', sans-serif;
+
+            @include tablet {
+               width: 35%;
+            }
          }
 
          & .btn-cancel:hover {
@@ -251,7 +404,12 @@
             height: 3.5rem;
             background-color: #0095FF;
             color: white;
-            font-size: 1.25rem;
+				font-size: 1.25rem;
+				font-family:'Avenir Next Demi-Bold', sans-serif;
+
+            @include tablet {
+               width: 35%;
+            }
          }
 
          & .btn-save:hover {

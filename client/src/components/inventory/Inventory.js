@@ -109,7 +109,7 @@ class Inventory extends React.Component {
 											<div className="status-switch-div">
 												<p>In Stock</p>
 												<label className="status-switch" name="status-switch" id="status-switch">
-													<Switch onChange={this.handleChange} checked={!this.state.checked} checkedIcon={false} uncheckedIcon={false} />
+													<Switch onChange={this.handleChange} checked={!this.state.checked} checkedIcon={false} uncheckedIcon={false} boxShadow='0 0 8px rgba(0,0,0,0.3)' />
 												</label>
 											</div>
 										</div>

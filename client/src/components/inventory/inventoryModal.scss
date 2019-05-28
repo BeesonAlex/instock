@@ -2,6 +2,11 @@
 @import '../../fonts.scss';
 @import '../../App.scss';
 
+@keyframes modalShow {
+  from {top: -700px;}
+  to {top: 0;}
+}
+
 .modal-wrapper-hide {
    display: none;
 }
@@ -16,6 +21,8 @@
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+   animation-name: modalShow;
+   animation-duration: 0.5s;
 
    & .modal-form-wrapper {
       border-radius: 5px;
@@ -24,6 +31,9 @@
       position: fixed;
       background-color: $white;
       overflow-y: scroll;
+      animation-name: modalShow;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
 
       @include tablet {
          width: 65%;
@@ -343,22 +353,6 @@
    }
 
    & .modal-form-wrapper::-webkit-scrollbar {
-         // width: 10px;
-         display: none;
-      }
-
-   // & .modal-form-wrapper::-webkit-scrollbar-track {
-   //    box-shadow: inset 0 0 5px grey; 
-   //    border-radius: 3px;
-   // }
-
-   // & .modal-form-wrapper::-webkit-scrollbar-thumb {
-   //    box-shadow: inset 0 0 5px grey; 
-   //    border-radius: 3px;
-   // }
-
-   // & .modal-form-wrapper::-webkit-scrollbar-thumb:hover {
-   //    background: #0065AD;
-   // }
-
+      display: none;
+   }
 }
