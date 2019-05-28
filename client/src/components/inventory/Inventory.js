@@ -16,26 +16,9 @@ class Inventory extends React.Component {
 
       // below is for the toggle switch
       checked: false
-   }
+   };
    // below line needs to be changed to an arrow function.
    handleChange = this.handleChange.bind(this);
-    
-   openModalHandler = () => {
-    	this.setState({
-      	isShowing: true
-		});
-  	};
-
-  	closeModalHandler = () => {
-   	this.setState({
-      	isShowing: false
-		});
-  	};
-
-	// below is for the toggle switch
-	handleChange(checked) {
-		this.setState({ checked });
-	};
 
    componentDidMount() {    
       axios.get(`http://localhost:8080/data/inventory/`)
@@ -46,7 +29,24 @@ class Inventory extends React.Component {
 			.catch(error => {
 			console.log(error)
       })
-   }
+	};
+	
+	openModalHandler = () => {
+		this.setState({
+			isShowing: true
+		});
+	};
+
+	closeModalHandler = () => {
+		this.setState({
+			isShowing: false
+		});
+	};
+
+	// below is for the toggle switch
+	handleChange(checked) {
+		this.setState({ checked });
+	};
 
    render() {
 		const modalShowHide = this.state.isShowing ? "modal-wrapper-show" : "modal-wrapper-hide";
@@ -67,20 +67,12 @@ class Inventory extends React.Component {
                <h3 className="product__status product__heading show-headings">STATUS</h3>
             </div>
             <div>
-               <button className="add-inventory-button" onClick={this.openModalHandler} type='button'><img src={addIcon} alt="add icon"/></button>
-            </div>
-            <section className="inventoryItems">
-               {
-                  this.state.inventory.map((inventory, id) => {
-                     return <InventoryItem className="inventoryItem" key={id} product={inventory}/>
-                  })
-               }
-				</section>
-				<div className={modalShowHide}>
-					<InventoryModal
-						className="modal"
-						show={this.state.isShowing}
-						close={this.closeModalHandler}>
+					<button className="add-inventory-button" type="button" onClick={this.openModalHandler}><img src={addIcon} alt="add icon"/></button>
+					<div className={modalShowHide}>
+						<InventoryModal
+							className="modal"
+							show={this.state.isShowing}
+							close={this.closeModalHandler}>
 							<div className="main-modal-div">
 								<form className="modal-form" id="modal-form">
 									<div className="first-form-div">
@@ -117,9 +109,9 @@ class Inventory extends React.Component {
 											<div className="status-switch-div">
 												<p>In Stock</p>
 												<label className="status-switch" name="status-switch" id="status-switch">
-													<Switch onChange={this.handleChange} checked={!this.state.checked} />
+													<Switch onChange={this.handleChange} checked={!this.state.checked} checkedIcon={false} uncheckedIcon={false} />
 												</label>
-										</div>
+											</div>
 										</div>
 									</div>
 									<div className="fourth-form-div">
@@ -128,8 +120,16 @@ class Inventory extends React.Component {
 									</div>
 								</form>
 							</div>
-					</InventoryModal>
-				</div>
+						</InventoryModal>
+					</div>
+            </div>
+            <section className="inventoryItems">
+               {
+                  this.state.inventory.map((inventory, id) => {
+                     return <InventoryItem className="inventoryItem" key={id} product={inventory}/>
+                  })
+               }
+				</section>
          </section>
       )
    }

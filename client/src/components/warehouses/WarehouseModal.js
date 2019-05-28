@@ -1,12 +1,12 @@
 import React from 'react';
-import './inventoryModal.scss';
+import './warehouseModal.scss';
 
-const InventoryModal = (props) => {
+const WarehouseModal = (props) => {
 	return (
 		<div className="modal-wrapper">
 			<div className="modal-form-wrapper" >
 				<div className="modal-header">
-					<h1 className="modal-header-h1">Create New</h1>
+					<h1>Add New</h1>
 				</div>
 				<div className="modal-body">
 					<div>
@@ -22,4 +22,4 @@ const InventoryModal = (props) => {
 	)
 }
 
-export default InventoryModal;
+export default WarehouseModal;

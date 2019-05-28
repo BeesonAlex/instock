@@ -1,0 +1,267 @@
+@import '../../colors.scss';
+@import '../../fonts.scss';
+@import '../../App.scss';
+
+.modal-wrapper-hide {
+   display: none;
+}
+
+.modal-wrapper-show {
+   position: fixed;
+   top: 0;
+   background: rgba(0, 0, 0, 0.6);
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   & .modal-form-wrapper {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: white;
+      overflow-y: scroll;
+
+      & .modal-header {
+         width: 80%;
+         margin-left: 10%;
+      }
+
+      & .modal-body {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         width: 80%;
+         margin-bottom: 10%;
+         margin-left: 10%;
+
+         & .main-modal-div {
+            display: flex;
+            width: 100%;
+
+            & .modal-form {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+
+               & .first-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .warehouse-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .warehouse-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .warehouse-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .empty-div {
+                     display: none;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .empty-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .empty-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .second-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .address-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .address-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .address-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .location-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .location-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .location-dropdown {
+                        border-radius: 5px;
+                        height: 4rem;
+                        font-size: 1.25rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .third-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .contact-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .contact-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .contact-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .position-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .position-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .position-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .fourth-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .phNumber-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .phNumber-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .phNumber-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+
+                  & .email-div {
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 1rem;
+
+                     & .email-label {
+                        margin: 0.5rem 0;
+                     }
+
+                     & .email-input {
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+                     }
+                  }
+               }
+
+               & .fifth-form-div {
+                  display: flex;
+                  flex-direction: column;
+
+                  & .item-label {
+                     margin: 0.5rem 0;
+                  }
+
+                  & .item-description {
+                     border-radius: 5px;
+                     height: 5rem;
+                     padding-top: 1rem;
+                     text-indent: 1rem;
+                     outline: none;
+                  }
+               }
+            }
+         }
+      }
+
+      & .modal-footer {
+         display: flex;
+         flex-direction: column-reverse;
+         width: 80%;
+         margin-left: 10%;
+
+         & .btn-cancel {
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: white;
+            color: #0095FF;
+            font-size: 1.25rem;
+         }
+
+         & .btn-cancel:hover {
+            border: 1px solid #0065AD;
+            background-color: #0065AD;
+            color: white;
+         }
+
+         & .btn-save {
+            border: 1px solid #0095FF;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: #0095FF;
+            color: white;
+            font-size: 1.25rem;
+         }
+
+         & .btn-save:hover {
+            border: 1px solid #0065AD;
+            background-color: #0065AD;
+         }
+      }
+	}
+	
+	& .modal-form-wrapper::-webkit-scrollbar {
+   	display: none;
+	}
+}
