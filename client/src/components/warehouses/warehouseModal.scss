@@ -23,7 +23,7 @@
 	animation-name: modalShow;
    animation-duration: 0.5s;
 
-   & .modal-form-wrapper {
+   .modal-form-wrapper {
       border-radius: 5px;
       width: 100%;
       height: 100%;
@@ -47,11 +47,11 @@
          height: 624px;
       }
 
-      & .modal-header {
+      .modal-header {
          @include m-h1-header;
          width: 80%;
          margin-left: 10%;
-         margin-bottom: 1rem;
+         margin-bottom: 1.75rem;
 			margin-top: 2rem;
 			
 			@include tablet {
@@ -59,24 +59,24 @@
          }
       }
 
-      & .modal-body {
+      .modal-body {
          display: flex;
          flex-direction: column;
          justify-content: center;
          width: 80%;
-         margin-bottom: 10%;
+         margin-bottom: 5%;
          margin-left: 10%;
 
-         & .main-modal-div {
+         .main-modal-div {
             display: flex;
             width: 100%;
 
-            & .modal-form {
+            .modal-form {
                display: flex;
                flex-direction: column;
                width: 100%;
 
-               & .first-form-div {
+               .first-form-div {
                   display: flex;
 						flex-direction: column;
 						
@@ -85,7 +85,7 @@
                      justify-content: space-between;
                   }
 
-                  & .warehouse-div {
+                  .warehouse-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -94,12 +94,12 @@
                         width: 45%;
                      }
 
-                     & .warehouse-label {
+                     .warehouse-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .warehouse-input {
+                     .warehouse-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -112,7 +112,7 @@
                      }
                   }
 
-                  & .empty-div {
+                  .empty-div {
                      display: none;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -121,12 +121,12 @@
                         width: 45%;
                      }
 
-                     & .empty-label {
+                     .empty-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .empty-input {
+                     .empty-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -140,16 +140,16 @@
                   }
                }
 
-               & .second-form-div {
+               .second-form-div {
                   display: flex;
 						flex-direction: column;
 						
-						 @include tablet {
-                     flex-direction: row;
+						@include tablet {
+                  	flex-direction: row;
                      justify-content: space-between;
                   }
 
-                  & .address-div {
+                  .address-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -158,12 +158,12 @@
                         width: 45%;
                      }
 
-                     & .address-label {
+                     .address-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .address-input {
+                     .address-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -176,7 +176,7 @@
                      }
                   }
 
-                  & .location-div {
+                  .location-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -185,12 +185,12 @@
                         width: 45%;
                      }
 
-                     & .location-label {
+                     .location-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .location-dropdown {
+                     .location-dropdown {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 4rem;
@@ -206,7 +206,7 @@
                   }
                }
 
-               & .third-form-div {
+               .third-form-div {
                   display: flex;
 						flex-direction: column;
 						
@@ -215,7 +215,7 @@
                      justify-content: space-between;
                   }
 
-                  & .contact-div {
+                  .contact-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -224,12 +224,12 @@
                         width: 45%;
                      }
 
-                     & .contact-label {
+                     .contact-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .contact-input {
+                     .contact-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -242,7 +242,7 @@
                      }
                   }
 
-                  & .position-div {
+                  .position-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -252,12 +252,12 @@
                         justify-content: space-around;
                      }
 
-                     & .position-label {
+                     .position-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .position-input {
+                     .position-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -271,8 +271,7 @@
                   }
                }
 
-               & .fourth-form-div {
-						border: 2px solid red;
+               .forth-form-div {
                   display: flex;
 						flex-direction: column;
 						
@@ -281,8 +280,7 @@
 							justify-content: space-between;
                   }
 
-                  & .phNumber-div {
-							border: 2px solid blue;
+                  .phNumber-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -291,12 +289,12 @@
                         width: 45%;
                      }
 
-                     & .phNumber-label {
+                     .phNumber-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .phNumber-input {
+                     .phNumber-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -309,8 +307,7 @@
                      }
                   }
 
-                  & .email-div {
-							border: 2px solid green;
+                  .email-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -319,12 +316,12 @@
                         width: 45%;
                      }
 
-                     & .email-label {
+                     .email-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     & .email-input {
+                     .email-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -338,7 +335,7 @@
                   }
                }
 
-               & .fifth-form-div {
+               .fifth-form-div {
                   display: flex;
 						flex-direction: column;
 						
@@ -346,12 +343,12 @@
                      width: 100%;
                   }
 
-                  & .item-label {
+                  .item-label {
 							@include m-label;
                      margin: 0.5rem 0;
                   }
 
-                  & .item-description {
+                  .item-description {
                      border: 2px solid $text-field-border;
                      border-radius: 5px;
                      height: 5rem;
@@ -364,11 +361,12 @@
          }
       }
 
-      & .modal-footer {
+      .modal-footer {
          display: flex;
          flex-direction: column-reverse;
          width: 80%;
 			margin-left: 10%;
+			margin-bottom: 4%;
 			
 			@include tablet {
             flex-direction: row;
@@ -376,7 +374,7 @@
             width: 80%;
          }
 
-         & .btn-cancel {
+         .btn-cancel {
             border: none;
             border-radius: 5px;
             width: 100%;
@@ -391,13 +389,13 @@
             }
          }
 
-         & .btn-cancel:hover {
+         .btn-cancel:hover {
             border: 1px solid #0065AD;
             background-color: #0065AD;
             color: white;
          }
 
-         & .btn-save {
+         .btn-save {
             border: 1px solid #0095FF;
             border-radius: 5px;
             width: 100%;
@@ -412,14 +410,14 @@
             }
          }
 
-         & .btn-save:hover {
+         .btn-save:hover {
             border: 1px solid #0065AD;
             background-color: #0065AD;
          }
       }
 	}
 	
-	& .modal-form-wrapper::-webkit-scrollbar {
+	.modal-form-wrapper::-webkit-scrollbar {
    	display: none;
 	}
 }
