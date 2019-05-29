@@ -142,7 +142,7 @@ export class Warehouses extends Component {
 											<input className="position-input" type="text" name="position-input" id="position-input" placeholder="Enter Position" />
 										</div>
 									</div>
-									<div className="fourth-form-div">
+									<div className="forth-form-div">
 										<div className="phNumber-div">
 											<label className="phNumber-label" htmlFor="phNumber-switch">
 												PHONE NUMBER
