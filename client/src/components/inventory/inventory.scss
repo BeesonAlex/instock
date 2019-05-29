@@ -19,9 +19,15 @@
         justify-content: space-between;
     }
     &__title {
-        @include h1-header;
+        @include m-h1-header;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        @include tablet {
+            @include h1-header;
+        }
+        @include desktop {
+            @include h1-header;
+        }
     }
     &__search {
         display: flex;
@@ -29,8 +35,7 @@
         border: 1px solid $mercury;
         width: 92%;
         height: 3rem;
-        margin: 0 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         border-radius: 4px;
         background-color: $alabaster;
         @include tablet {
@@ -43,15 +48,6 @@
         }
     }
 }
-.subheadings {
-    display: none;
-    @include tablet {
-        display: flex;
-    }
-    @include tablet {
-        display: flex;
-    }
-}
 .product {
     padding-bottom: 1rem;
     border-bottom: 2px solid $mercury;
@@ -62,6 +58,7 @@
         padding: 1.5rem 0;
     }
     &__detail {
+        @include m-paragraph;
         @include tablet {
             width: 17rem;
             margin-right: 1.5rem;
@@ -74,47 +71,59 @@
         justify-content: space-between;
     }
     &__heading {
+        @include m-h2-header;
         color: $mercury;
-        font-family: 'Avenir Next Bold';
-        margin: 1rem 0;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
         @include tablet {
+            display: none;
+        }
+        @include desktop {
             display: none;
         }
     }
     &__name {
+        @include m-h2-header;
         margin-bottom: 1rem;
-        font-family: 'Avenir Next Demi';
+        @include tablet {
+            @include subheader;
+        }
+        @include desktop {
+            @include subheader;
+        }
     }
     &__description {
+        @include m-paragraph;
         margin-bottom: 0.5rem;
     }
-    &__icon {
-        @include tablet {
-            display: none;
-        }
-        @include desktop {
-            display: none;
-        }
+}
+.subheadings {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        width: 100%;
     }
-    &__icon2 {
-        display: none;
-        @include tablet {
-            display: flex;
-        }
-        @include desktop {
-            display: flex;
-        }
+    &__group {
+        width: 272px;
+        margin-right: 1.5rem;
     }
+}
+#item {
+    width: 272px;
+
 }
 .show-headings {
     display: none;
     @include tablet {
+        width: 17rem;
+        //margin-right: 1.5rem;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
     }
-    @include tablet {
+    @include desktop {
         display: flex;
-        justify-content: space-between;
+        //justify-content: space-between;
     }
 }
 .add-inventory-button {
@@ -132,6 +141,35 @@
         background-color: #0065AD;
     }
 }
-#item {
-    margin-right: 10rem;
+
+.dropdown {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    &__remove {
+        position: absolute;
+        top: 2.5rem;
+        background-color: $white;
+        @include tablet {
+            top: 3.5rem;
+        }
+        &--button {
+            width: 10rem;
+            height: 2.5rem;
+            border: 1px solid $mercury;
+            text-align: left;
+            padding-left: 1rem;
+        }
+    }
+    &__kebab {
+        align-items: flex-start;
+        @include tablet {
+            position: absolute;
+            left: 90%;
+        }
+        &:hover{
+            filter: brightness(30%);
+        }
+    }
 }
+
