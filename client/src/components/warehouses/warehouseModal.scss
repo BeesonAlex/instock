@@ -12,6 +12,7 @@
 }
 
 .modal-wrapper-show {
+   z-index: 10;
    position: fixed;
    top: 0;
    background: rgba(0, 0, 0, 0.6);
@@ -387,6 +388,12 @@
             @include tablet {
                width: 35%;
             }
+
+            @include desktop {
+               font-family: 'Avenir Next Bold';
+               font-weight: bold;
+               font-size: 2.25rem;
+            }
          }
 
          .btn-cancel:hover {
@@ -407,6 +414,12 @@
 
             @include tablet {
                width: 35%;
+            }
+
+            @include desktop {
+               font-family: 'Avenir Next Bold';
+               font-weight: bold;
+               font-size: 2.25rem;
             }
          }
 

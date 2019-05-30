@@ -45,6 +45,18 @@ export class Warehouses extends Component {
             console.log(error)
          })
 	}
+
+	// componentDidUpdate() {
+	// 	axios.post(`http://localhost:8080/data/warehouses`)
+	// 		.then(response => {
+	// 			this.setState({
+	// 				warehouses: response.data.warehouseArray,
+	// 			})
+	// 		})
+	// 		.catch(error => {
+	// 			console.log(error)
+	// 		})
+	// }
 	
 	openModalHandler = () => {
 		this.setState({
