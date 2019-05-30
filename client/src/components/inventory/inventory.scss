@@ -43,6 +43,11 @@
             margin-bottom: 1rem;
             width: 15rem;
         }
+        @include desktop {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            width: 20rem;
+        }
         &--searchIcon {
             margin: 0 1rem;
         }
@@ -53,6 +58,7 @@
     border-bottom: 2px solid $mercury;
     justify-content: center;
     @include tablet {
+        position: relative;
         display: flex;
         justify-content: space-between;
         padding: 1.5rem 0;
@@ -60,10 +66,14 @@
     &__detail {
         @include m-paragraph;
         @include tablet {
+            @include paragraph;
             width: 17rem;
             margin-right: 1.5rem;
             display: flex;
             align-items: center;
+        }
+        @include desktop {
+            @include paragraph;
         }
     }
     &__top {
@@ -77,9 +87,13 @@
         margin-bottom: 1rem;
         @include tablet {
             display: none;
+            @include subheader;
+            color: $mercury;
         }
         @include desktop {
             display: none;
+            @include subheader;
+            color: $mercury;
         }
     }
     &__name {
@@ -95,6 +109,9 @@
     &__description {
         @include m-paragraph;
         margin-bottom: 0.5rem;
+        @include tablet {
+            @include paragraph;
+        }
     }
 }
 .subheadings {
@@ -117,19 +134,17 @@
     display: none;
     @include tablet {
         width: 17rem;
-        //margin-right: 1.5rem;
         display: flex;
         align-items: center;
     }
     @include desktop {
         display: flex;
-        //justify-content: space-between;
     }
 }
 .add-inventory-button {
     width: 4rem;
     height: 4rem;
-    background-color: #002F5F;
+    background-color: $instock-blue-dark;
     border-radius: 50%;
     display:flex;
     justify-content: center;
@@ -137,21 +152,36 @@
     position: fixed;
     bottom: 10%;
     right: 5%;
+    z-index: 111;
     &:hover {
-        background-color: #0065AD;
+        background-color: $instock-blue;
+    }
+    @include tablet {
+        width: 5rem;
+        height: 5rem;
+        right: 15%;
+    }
+    @include desktop {
+        width: 5rem;
+        height: 5rem;
+        right: 15%;
     }
 }
-
 .dropdown {
     display: flex;
     position: relative;
     justify-content: flex-end;
+    @include tablet {
+        position: absolute;
+        top: 40%;
+        right: 1px;
+    }
     &__remove {
         position: absolute;
-        top: 2.5rem;
+        top: 50px;
         background-color: $white;
         @include tablet {
-            top: 3.5rem;
+            top: 30px;
         }
         &--button {
             width: 10rem;

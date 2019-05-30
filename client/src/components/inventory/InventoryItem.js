@@ -10,6 +10,7 @@ class InventoryItem extends React.Component {
             <div className="product">
                 <div className="product__top">
                     <h3 className="product__item product__heading">ITEM</h3>
+                    <Dropdown className="displayMobile"/>
                 </div>
                 <div className="product__group">
                     <h3 className="product__name">{name}</h3>
@@ -23,7 +24,6 @@ class InventoryItem extends React.Component {
                 <p className="product__quantity product__detail">{quantity}</p>
                 <h3 className="product__status product__heading">STATUS</h3>
                 <p className="product__status product__detail">{isInstock ? 'In Stock' : 'Out of Stock'}</p>
-                <Dropdown className="displayMobile"/>
             </div>
         )
     }

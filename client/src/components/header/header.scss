@@ -45,19 +45,21 @@
             width: 100%;
             text-align: center;
             height: 100%;
-            padding: 8px 0;
+            padding-bottom: 8px;
             color: $silver;
             @include tablet {
                 display: flex;
                 align-items: center;
-                width: 6rem;
+                width: 4rem;
                 margin-left: 3rem;
+                padding: 8px 0;
             } 
             @include desktop {
                 display: flex;
                 align-items: center;
-                width: 80px;
+                width: 65px;
                 margin-left: 54px;
+                padding: 8px 0;
             } 
             &:hover {
                 border-bottom: 4px solid $mercury;
