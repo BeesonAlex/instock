@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './inventory.scss';
-import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
+//import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg';
+import Dropdown from './Dropdown';
 
 class InventoryItem extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class InventoryItem extends React.Component {
             <div className="product">
                 <div className="product__top">
                     <h3 className="product__item product__heading">ITEM</h3>
-                    <img className="product__icon" src={kebabIcon} alt="kebab icon"/>
+                    <Dropdown className="displayMobile"/>
                 </div>
                 <Link to={{
                     pathname:`/inventory/${id}`,
@@ -21,14 +22,13 @@ class InventoryItem extends React.Component {
                 </div>
                 </Link>
                 <h3 className="product__lastOrdered product__heading">LAST ORDERED</h3>
-                <h3 className="product__lastOrdered product__detail">{lastOrdered}</h3>
+                <p className="product__lastOrdered product__detail">{lastOrdered}</p>
                 <h3 className="product__location product__heading">LOCATION</h3>
-                <h3 className="product__location product__detail">{location}</h3>
+                <p className="product__location product__detail">{location}</p>
                 <h3 className="product__quantity product__heading">QUANTITY</h3>
-                <h3 className="product__quantity product__detail">{quantity}</h3>
+                <p className="product__quantity product__detail">{quantity}</p>
                 <h3 className="product__status product__heading">STATUS</h3>
-                <h3 className="product__status product__detail">{isInstock ? 'In Stock' : 'Out of Stock'}</h3>
-                <img className="product__icon2" src={kebabIcon} alt="kebab icon"/>
+                <p className="product__status product__detail">{isInstock ? 'In Stock' : 'Out of Stock'}</p>
             </div>
         )
     }

@@ -19,9 +19,15 @@
         justify-content: space-between;
     }
     &__title {
-        @include h1-header;
+        @include m-h1-header;
         margin-top: 2rem;
         margin-bottom: 1rem;
+        @include tablet {
+            @include h1-header;
+        }
+        @include desktop {
+            @include h1-header;
+        }
     }
     &__search {
         display: flex;
@@ -29,8 +35,7 @@
         border: 1px solid $mercury;
         width: 92%;
         height: 3rem;
-        margin: 0 16px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         border-radius: 4px;
         background-color: $alabaster;
         @include tablet {
@@ -38,18 +43,14 @@
             margin-bottom: 1rem;
             width: 15rem;
         }
+        @include desktop {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            width: 20rem;
+        }
         &--searchIcon {
             margin: 0 1rem;
         }
-    }
-}
-.subheadings {
-    display: none;
-    @include tablet {
-        display: flex;
-    }
-    @include tablet {
-        display: flex;
     }
 }
 .product {
@@ -57,16 +58,22 @@
     border-bottom: 2px solid $mercury;
     justify-content: center;
     @include tablet {
+        position: relative;
         display: flex;
         justify-content: space-between;
         padding: 1.5rem 0;
     }
     &__detail {
+        @include m-paragraph;
         @include tablet {
+            @include paragraph;
             width: 17rem;
             margin-right: 1.5rem;
             display: flex;
             align-items: center;
+        }
+        @include desktop {
+            @include paragraph;
         }
     }
     &__top {
@@ -74,53 +81,70 @@
         justify-content: space-between;
     }
     &__heading {
+        @include m-h2-header;
         color: $mercury;
-        font-family: 'Avenir Next Bold';
-        margin: 1rem 0;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
         @include tablet {
             display: none;
+            @include subheader;
+            color: $mercury;
+        }
+        @include desktop {
+            display: none;
+            @include subheader;
+            color: $mercury;
         }
     }
     &__name {
+        @include m-h2-header;
         margin-bottom: 1rem;
-        font-family: 'Avenir Next Demi';
+        @include tablet {
+            @include subheader;
+        }
+        @include desktop {
+            @include subheader;
+        }
     }
     &__description {
+        @include m-paragraph;
         margin-bottom: 0.5rem;
-    }
-    &__icon {
         @include tablet {
-            display: none;
-        }
-        @include desktop {
-            display: none;
+            @include paragraph;
         }
     }
-    &__icon2 {
-        display: none;
-        @include tablet {
-            display: flex;
-        }
-        @include desktop {
-            display: flex;
-        }
+}
+.subheadings {
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        width: 100%;
     }
+    &__group {
+        width: 272px;
+        margin-right: 1.5rem;
+    }
+}
+#item {
+    width: 272px;
+
 }
 .show-headings {
     display: none;
     @include tablet {
+        width: 17rem;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
     }
-    @include tablet {
+    @include desktop {
         display: flex;
-        justify-content: space-between;
     }
 }
 .add-inventory-button {
     width: 4rem;
     height: 4rem;
-    background-color: #002F5F;
+    background-color: $instock-blue-dark;
     border-radius: 50%;
     display:flex;
     justify-content: center;
@@ -128,10 +152,54 @@
     position: fixed;
     bottom: 10%;
     right: 5%;
+    z-index: 111;
     &:hover {
-        background-color: #0065AD;
+        background-color: $instock-blue;
+    }
+    @include tablet {
+        width: 5rem;
+        height: 5rem;
+        right: 15%;
+    }
+    @include desktop {
+        width: 5rem;
+        height: 5rem;
+        right: 15%;
     }
 }
-#item {
-    margin-right: 10rem;
+.dropdown {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    @include tablet {
+        position: absolute;
+        top: 40%;
+        right: 1px;
+    }
+    &__remove {
+        position: absolute;
+        top: 50px;
+        background-color: $white;
+        @include tablet {
+            top: 30px;
+        }
+        &--button {
+            width: 10rem;
+            height: 2.5rem;
+            border: 1px solid $mercury;
+            text-align: left;
+            padding-left: 1rem;
+        }
+    }
+    &__kebab {
+        align-items: flex-start;
+        @include tablet {
+            position: absolute;
+            left: 90%;
+        }
+        &:hover{
+            filter: brightness(30%);
+        }
+    }
 }
+

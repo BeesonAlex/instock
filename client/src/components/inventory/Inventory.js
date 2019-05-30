@@ -60,8 +60,10 @@ class Inventory extends React.Component {
                   <input className="header__search--input" placeholder="Search" />
                </div>
             </div>
-            <div className="subheadings show-headings">
-               <h3 className="product__item product__heading show-headings" id="item">ITEM</h3>
+            <div className="subheadings">
+                <div className="subheadings__group">
+                    <h3 className="product__item product__heading show-headings" id="item">ITEM</h3>
+                </div>
                <h3 className="product__lastOrdered product__heading show-headings">LAST ORDERED</h3>
                <h3 className="product__location product__heading show-headings">LOCATION</h3>
                <h3 className="product__quantity product__heading show-headings">QUANTITY</h3>

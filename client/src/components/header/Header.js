@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from '../../assets/Logo/Logo-instock.svg'
-import './header.scss'
-import '../../App.scss'
+//import { Link } from 'react-router-dom';
+import logo from '../../assets/Logo/Logo-instock.svg';
+import './header.scss';
+import '../../App.scss';
 
  function Header() {
     return (
