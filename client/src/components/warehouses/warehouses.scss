@@ -72,6 +72,9 @@
         #table-labels {
             display: none;
             margin-top: 0rem;
+            color: $silver;
+
+            @include m-label;
 
             @include desktop {
                 display: flex;

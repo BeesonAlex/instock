@@ -4,6 +4,7 @@ import './router.scss';
 import Test from '../test/test';
 import Warehouses from '../warehouses/Warehouses';
 import Inventory from '../inventory/Inventory';
+import InventoryDetails from '../inventoryDetails/InventoryDetails';
 
 class Router extends Component {
     render() {
@@ -14,7 +15,7 @@ class Router extends Component {
                     <Route path="/warehouses" exact component={Warehouses}/>
                     <Route path="/warehouses/:id" exact component={Test}/>
                     <Route path="/inventory" exact component={Inventory}/>
-                    <Route path="/inventory/:id" exact component={Test}/>
+                    <Route path="/inventory/:id" exact component={InventoryDetails}/>
                 </Switch>
           </BrowserRouter>
         )
