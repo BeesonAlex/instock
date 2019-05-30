@@ -1,5 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logo from '../../assets/Logo/Logo-instock.svg';
 import './header.scss';
 import '../../App.scss';
@@ -8,14 +8,20 @@ import '../../App.scss';
     return (
         <header>
             <nav className="nav-bar">
-                <img className="nav-bar__logo" src={logo} alt=""/>
+                <Link to={"/"}>
+                    <img className="nav-bar__logo" src={logo} alt=""/>
+                </Link>
                 <ul className="nav-bar__tabs">
-                    <li className="nav-bar__tabs--inventory nav-bar__tabs--current">Inventory</li>
-                    <li className="nav-bar__tabs--locations">Locations</li>
+                    <Link to={"/inventory"}>
+                        <li className="nav-bar__tabs--inventory nav-bar__tabs--current">Inventory</li>
+                    </Link>
+                    <Link to={"/warehouses"}>
+                        <li className="nav-bar__tabs--locations">Locations</li>
+                    </Link>
                 </ul>
             </nav>
         </header>
     )
 }
 
-export default Header;
+export default withRouter(Header);
