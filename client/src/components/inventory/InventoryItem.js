@@ -1,20 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './inventory.scss';
 import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
 
 class InventoryItem extends React.Component {
     render() {
-        const { name, description, lastOrdered, location, quantity, isInstock } = this.props.product;
+        const { id, name, description, lastOrdered, location, quantity, isInstock } = this.props.product;
         return (
             <div className="product">
                 <div className="product__top">
                     <h3 className="product__item product__heading">ITEM</h3>
                     <img className="product__icon" src={kebabIcon} alt="kebab icon"/>
                 </div>
+                <Link to={{
+                    pathname:`/inventory/${id}`,
+                }}>
                 <div className="product__group">
                     <h3 className="product__name">{name}</h3>
                     <p className="product__description product__detail">{description}</p>
                 </div>
+                </Link>
                 <h3 className="product__lastOrdered product__heading">LAST ORDERED</h3>
                 <h3 className="product__lastOrdered product__detail">{lastOrdered}</h3>
                 <h3 className="product__location product__heading">LOCATION</h3>

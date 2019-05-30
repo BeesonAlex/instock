@@ -1,0 +1,116 @@
+@import '../../colors.scss';
+@import '../../fonts.scss';
+@import '../../App.scss';
+
+.inventory-details-wrapper {
+    margin: 0rem 1rem 1rem 1rem;
+
+    .title-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .title__back-link {
+            display: flex;
+            align-items: center;
+            padding: 2rem 0rem 1rem 0rem;
+
+            @include tablet() {
+                padding: 3rem 0rem 0rem 0rem;
+            }
+
+            @include desktop() {
+                padding: 3rem 0rem 3rem 0rem;
+            }
+
+
+            .title__back-button {
+                margin-right: 1rem;
+            }
+
+            .section__header {
+                @include m-h1-header;
+                
+        
+            @include tablet() {
+                @include h1-header();
+            }
+        
+            }
+        }
+        .title__instock-section {
+            display: flex;
+            justify-content: center;
+            width: 5.5rem;
+            height: 1.5rem;
+            border-radius: 5px;
+            
+            @include paragraph;
+            color: $white;
+        }
+
+        .instock {
+            background-color: green;
+        }
+
+        .out-of-stock {
+            background-color: red;
+        }
+
+    }
+
+    .product-information-wrapper {
+
+        .product-information__description-wrapper {
+
+            .product-information__label {
+                @include m-label;
+
+                @include tablet {
+                    @include label;
+                }
+            }
+
+            .product-information__description {
+                @include m-paragraph;
+
+                @include tablet {
+                    @include paragraph;
+                }
+            }
+        }
+
+        .product-information__numbers-wrapper {
+
+            .product-information__numbers__ordered-wrapper {
+
+                .product-information__label {
+                    @include m-label;
+    
+                    @include tablet {
+                        @include label;
+                    }
+                }
+    
+                .product-information__description {
+                    @include m-paragraph;
+    
+                    @include tablet {
+                        @include paragraph;
+                    }
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+    .button-wrapper {
+
+        .button {
+
+        }
+    }
+}

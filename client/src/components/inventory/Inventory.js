@@ -25,6 +25,7 @@ class Inventory extends React.Component {
 			.then(response => {
 			const inventory = response.data.inventoryArray;
 			this.setState({inventory});
+			console.log(inventory)
 			})
 			.catch(error => {
 			console.log(error)
