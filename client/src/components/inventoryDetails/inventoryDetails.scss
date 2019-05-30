@@ -5,9 +5,25 @@
 .inventory-details-wrapper {
     margin: 0rem 1rem 1rem 1rem;
 
+    @include tablet {
+        margin: 0rem 1.5rem 1rem 1.5rem;
+    }
+
+    @include desktop {
+        margin: 0rem 11.25rem 1rem 11.25rem;
+    }
+
     .title-wrapper {
         display: flex;
         flex-direction: column;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            flex-direction: row;
+            border-bottom: 1px solid $mercury;
+            padding-bottom: 2rem;
+            align-items: center;
+        }
 
         .title__back-link {
             display: flex;
@@ -34,35 +50,55 @@
             @include tablet() {
                 @include h1-header();
             }
-        
             }
         }
+
         .title__instock-section {
             display: flex;
             justify-content: center;
+            align-items: center;
             width: 5.5rem;
             height: 1.5rem;
             border-radius: 5px;
             
-            @include paragraph;
+            @include m-paragraph;
+
+            @include tablet {
+                margin: 3.3rem 0rem 0rem 2rem;
+
+                @include paragraph;
+            }
+        }
+        
+        .instock {
+            background-color: #15B300;
             color: $white;
         }
 
-        .instock {
-            background-color: green;
-        }
-
         .out-of-stock {
-            background-color: red;
+            background-color: $mercury;
+            color: black;
         }
-
     }
 
     .product-information-wrapper {
+        display: flex;
+        flex-direction: column;
+
+
+        @include desktop {
+            flex-direction: row;
+        }
 
         .product-information__description-wrapper {
+            margin-bottom: 0.5rem;
+
+            @include desktop {
+                margin: 0rem 4rem 0rem 0.5rem;
+            }
 
             .product-information__label {
+                margin-bottom: 1rem;
                 @include m-label;
 
                 @include tablet {
@@ -71,6 +107,7 @@
             }
 
             .product-information__description {
+                margin-bottom: 1.5rem;
                 @include m-paragraph;
 
                 @include tablet {
@@ -79,11 +116,23 @@
             }
         }
 
-        .product-information__numbers-wrapper {
-
-            .product-information__numbers__ordered-wrapper {
+        .product-information__details-wrapper {
+            @include tablet {
+                display: flex;
+                flex-wrap: wrap;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid $mercury;
+            }
+        
+            .product-information-wrapper {
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                }
 
                 .product-information__label {
+                    margin-bottom: 1rem;
                     @include m-label;
     
                     @include tablet {
@@ -92,25 +141,59 @@
                 }
     
                 .product-information__description {
+                    margin-bottom: 1.5rem;
                     @include m-paragraph;
     
                     @include tablet {
                         @include paragraph;
                     }
                 }
-
             }
 
+            #quantity-wrapper {
+                @include tablet{
+                width: 100%;
+                }
+            }
 
+            #categories-wrapper {
+                @include tablet {
+                width: 100%;
+                }
+            }
         }
-
-
     }
 
     .button-wrapper {
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+        }
 
         .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 100%;
+            background-color: $instock-blue;
+            color: $white;
+            border-radius: 0.3125rem;
+            margin-top: 2.5rem;
+            
+            &:hover {
+                background-color: $instock-blue-dark;
+            }
 
+            @include m-label();
+            color: $white;
+
+            @include tablet {
+                width: 10rem;
+                margin-bottom: unset;
+                @include label;
+                color: $white;
+            }
         }
     }
 }

@@ -63,22 +63,28 @@ export class InventoryDetails extends Component {
                         <p className="product-information__label">Item Description</p>
                         <p className="product-information__description">{this.state.inventoryDetails.description}</p>
                     </div>
-                    <div className="product-information__numbers-wrapper">
-                        <div className="product-information__numbers__ordered-wrapper">
+                    <div className="product-information__details-wrapper">
+                        <div className="product-information-wrapper" id="ordered-by-wrapper">
                             <p className="product-information__label">Ordered By</p>
                             <p className="product-information__description">{this.state.warehouseDetails.contact.name}</p>
+                        </div>
+                        <div className="product-information-wrapper" id="reference-number-wrapper">
                             <p className="product-information__label">Reference Number</p>
                             <p className="product-information__description">{this.state.inventoryDetails.id}</p>
                         </div>
-                        <div className="product-information__numbers__ordered-wrapper">
+                        <div className="product-information-wrapper" id="last-ordered-wrapper">
                             <p className="product-information__label">Last Ordered</p>
                             <p className="product-information__description">{this.state.inventoryDetails.lastOrdered}</p>
+                        </div>
+                        <div className="product-information-wrapper" id="location-wrapper">
                             <p className="product-information__label">Location</p>
                             <p className="product-information__description">{this.state.warehouseDetails.name}</p>
                         </div>
-                        <div className="product-information__numbers__ordered-wrapper">
+                        <div className="product-information-wrapper" id="quantity-wrapper">
                             <p className="product-information__label">Quantity</p>
                             <p className="product-information__description">{this.state.inventoryDetails.quantity}</p>
+                        </div>
+                        <div className="product-information-wrapper" id="categories-wrapper">
                             <p className="product-information__label">Categories</p>
                             <p className="product-information__description">{this.state.inventoryDetails.categories}</p>
                         </div>
