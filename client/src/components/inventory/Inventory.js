@@ -11,6 +11,7 @@ import './inventory.scss';
 class Inventory extends React.Component {
    state = {
       inventory: [],
+
       // below is for the modal itself
       isShowing: false,
 
@@ -25,6 +26,7 @@ class Inventory extends React.Component {
 			.then(response => {
 			const inventory = response.data.inventoryArray;
 			this.setState({inventory});
+			//console.log(response)
 			})
 			.catch(error => {
 			console.log(error)
@@ -72,7 +74,21 @@ class Inventory extends React.Component {
 	// below is for the toggle switch
 	handleChange(checked) {
 		this.setState({ checked });
-	};
+    };
+    
+    //function invoked in Dropdown component
+    removeItem = (id) => {
+        //console.log(id)
+        axios.delete(`http://localhost:8080/data/inventory/${id}`)
+            .then(response => {
+                const inventory = response.data;
+                this.setState({ inventory })
+                console.log(inventory);
+        })
+            .catch(error => {
+            console.log(error)
+        })
+    }
 
    render() {
 		const modalShowHide = this.state.isShowing ? "modal-wrapper-show" : "modal-wrapper-hide";
@@ -162,7 +178,7 @@ class Inventory extends React.Component {
             <section className="inventoryItems">
                {
                   this.state.inventory.map((inventory, id) => {
-                     return <InventoryItem className="inventoryItem" key={id} product={inventory}/>
+                     return <InventoryItem className="inventoryItem" key={id} product={inventory} removeItem={this.removeItem}/>
                   })
                }
 				</section>
