@@ -44,23 +44,23 @@ const createWarehouseId = () => {
 
 const createNewInventoryItem = (req, res) => {
 	const {
-   	itemName,
+   	name,
    	lastOrdered,
    	city,
    	province,
    	quantity,
    	isInStock,
-   	itemDescription,
+   	description,
    	categories
   	} = req.body;
   	const newProduct = {
    	id: createInventoryId(),
-   	productName: itemName,
-   	itemDescription,
+   	name: name,
+   	description,
    	quantity,
    	lastOrdered,
    	location: `${city}, ${province}`,
-   	statu: isInStock,
+   	status: isInStock,
    	categories,
    	warehouseId: `W${Math.floor(Math.random() * warehouseArray.length)}`
   	};
