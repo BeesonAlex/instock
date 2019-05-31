@@ -31,8 +31,6 @@ const getSingleWarehouse = (req, res) => {
    }
 };
 
-//hi
-
 // POST Create New Warehouse/Inventory Item
 let inventoryId = 8;
 const createInventoryId = () => {
