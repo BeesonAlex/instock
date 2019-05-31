@@ -55,7 +55,7 @@
 }
 .product {
     padding-bottom: 1rem;
-    border-bottom: 2px solid $mercury;
+    border-bottom: 1px solid $mercury;
     justify-content: center;
     @include tablet {
         position: relative;
@@ -82,23 +82,23 @@
     }
     &__heading {
         @include m-h2-header;
-        color: $mercury;
+        color: $silver;
         margin-top: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         @include tablet {
             display: none;
             @include subheader;
-            color: $mercury;
+            color: $silver;
         }
         @include desktop {
             display: none;
             @include subheader;
-            color: $mercury;
+            color: $silver;
         }
     }
     &__name {
         @include m-h2-header;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         @include tablet {
             @include subheader;
         }
@@ -118,7 +118,6 @@
     @include tablet {
         display: flex;
         justify-content: space-between;
-        padding: 1.5rem 0;
         width: 100%;
     }
     &__group {
@@ -176,12 +175,19 @@
         top: 40%;
         right: 1px;
     }
+    & a {
+        display: flex;
+        position: relative;
+    }
     &__remove {
         position: absolute;
         top: 50px;
+        left: -158px;
         background-color: $white;
+        box-shadow: 0px 20px 20px $mercury;
         @include tablet {
             top: 30px;
+            left: -158px;
         }
         &--button {
             width: 10rem;

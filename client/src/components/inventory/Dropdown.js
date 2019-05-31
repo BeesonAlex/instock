@@ -2,6 +2,7 @@ import React from 'react';
 import './inventory.scss';
 import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Dropdown extends React.Component {
     state = {
@@ -21,6 +22,9 @@ class Dropdown extends React.Component {
                 console.log(error)
             })
     }
+    componentDidUpdate () {
+
+    }
     render() {
         return (
             <div className="dropdown">
@@ -29,9 +33,9 @@ class Dropdown extends React.Component {
                 </button>
             {
                 this.state.showMenu ? (
-                    <div className="dropdown__remove">
+                    <Link to={"/inventory"}><div className="dropdown__remove">
                         <button className="dropdown__remove--button" onClick={this.removeItem} type="click">Remove</button>
-                    </div>
+                    </div></Link>
                 ) : ( null )
             }
             </div>
