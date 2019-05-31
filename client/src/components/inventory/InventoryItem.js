@@ -11,7 +11,7 @@ class InventoryItem extends React.Component {
             <div className="product">
                 <div className="product__top">
                     <h3 className="product__item product__heading">ITEM</h3>
-                    <Dropdown id={id} className="displayMobile"/>
+                    <Dropdown id={id} removeItem={this.props.removeItem} className="displayMobile"/>
                 </div>
                 <Link to={{
                     pathname:`/inventory/${id}`,

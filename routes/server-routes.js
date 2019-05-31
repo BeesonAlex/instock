@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { inventoryArray, warehouseArray } = require("../data/data");
+let { inventoryArray, warehouseArray } = require("../data/data");
 const router = Router();
 
 // Inventory GET
@@ -106,13 +106,12 @@ const createNewWarehouse = (req, res) => {
 
 //Inventory DELETE
 const removeInventoryItem = (req, res) => {
-		const reqId = req.params.id
-		let item = inventoryArray.filter(item => {
-			return item.id === item.reqId;
-		})[0];
-		const index = inventoryArray.indexOf(item);
-		inventoryArray.splice(index,1);
-		res.json({ message: `Item ${reqId} deleted.`})
+		const reqId = req.params.id;
+		let newArray = inventoryArray.filter(item => {
+			return item.id !== reqId
+		});
+		inventoryArray = newArray;
+		res.json(inventoryArray);
 }
 
 

@@ -46,6 +46,7 @@
             height: 100%;
             display: flex;
         }
+
         &--inventory, &--locations {
             &:hover {
                 color: $white;
