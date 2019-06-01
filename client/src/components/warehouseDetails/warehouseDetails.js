@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './warehouseDetails.scss';
+import backarrow from '../../assets/Icons/SVG/Icon-back-arrow.svg';
+import Inventory from '../inventory/Inventory';
 
 class WarehouseDetails extends Component {
     render() {
@@ -7,6 +9,7 @@ class WarehouseDetails extends Component {
             <>
             <section className="warehouseDetails">
                 <h1 className="warehouseDetails__title">
+                    <img className="warehouseDetails__backArrow" src={backarrow} alt="back" />
                     Warehouse Name
                 </h1>
                 <div className="warehouseDetails__address">
@@ -20,9 +23,9 @@ class WarehouseDetails extends Component {
                         <h3 className="warehouseDetails__address--postal-code">M65GB7 CA</h3>
                     </div>
                 </div>
-                <div className="warehouseDetails__contact-container">
+                <div className="warehouseDetails__contact">
                     <h4 className="warehouseDetails__contact--label">CONTACT</h4>
-                    <div className="warehouseDetails-container">
+                    <div className="warehouseDetails-contact-container">
                         <h3 className="warehouseDetails__contact--name">Mara Weinberg</h3>
                         <h3 className="warehouseDetails__contact--job-title">Warehouse Manager</h3>
                     </div>
@@ -33,7 +36,7 @@ class WarehouseDetails extends Component {
                 </div>
             </section>
             <section className="inventoryDetails">
-                
+                <Inventory />
             </section>
             </>
         )
