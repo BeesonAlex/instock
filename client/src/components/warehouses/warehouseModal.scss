@@ -52,8 +52,8 @@
          @include m-h1-header;
          width: 80%;
          margin-left: 10%;
-         margin-bottom: 1.75rem;
-			margin-top: 2rem;
+         margin-top: 2rem;
+         margin-bottom: 0.75rem;
 			
 			@include tablet {
             @include h1-header;
@@ -365,14 +365,12 @@
       .modal-footer {
          display: flex;
          flex-direction: column-reverse;
-         width: 80%;
-			margin-left: 10%;
-			margin-bottom: 4%;
+         width: 100%;
 			
 			@include tablet {
             flex-direction: row;
             justify-content: flex-end;
-            width: 80%;
+            width: 100%;
          }
 
          .btn-cancel {

@@ -1,7 +1,7 @@
 import React from 'react';
-import searchIcon from '../../assets/Icons/SVG/Icon-search.svg'
-import addIcon from '../../assets/Icons/SVG/Icon-add.svg'
-import InventoryItem from './InventoryItem'
+import searchIcon from '../../assets/Icons/SVG/Icon-search.svg';
+import addIcon from '../../assets/Icons/SVG/Icon-add.svg';
+import InventoryItem from './InventoryItem';
 import axios from 'axios';
 import InventoryModal from "./InventoryModal.js";
 import Switch from "react-switch";
@@ -39,7 +39,7 @@ class Inventory extends React.Component {
 		const postInfo = {
 			name: event.target.product_input.value,
 			lastOrdered: event.target.order_date_input.value,
-			location: event.target.city_input.value & ', ' & event.target.country_dropdown,
+			location: event.target.city_input.value & ', ' & event.target.country_dropdown.value,
 			quantity: event.target.quantity_input.value,
 			description: event.target.item_description.value
 		}
@@ -57,6 +57,15 @@ class Inventory extends React.Component {
 					});
 			});
 		this.closeModalHandler();
+	};
+
+	componentDidUpdate() {
+		axios
+			.get(`http://localhost:8080/data/inventory/`)
+			.then(res => {
+				const inventory = res.data.inventoryArray;
+				this.setState({ inventory });
+			});
 	};
 	
 	openModalHandler = () => {
@@ -118,7 +127,7 @@ class Inventory extends React.Component {
 							show={this.state.isShowing}
 							close={this.closeModalHandler}>
 							<div className="main-modal-div">
-								<form className="modal-form" id="modal-form" onSubmit={this.onSubmitHandler}>
+								<form className="modal-form" onSubmit={this.onSubmitHandler}>
 									<div className="first-form-div">
 										<div className="product-div">
 											<label className="product-label" htmlFor="product-input">PRODUCT</label>
