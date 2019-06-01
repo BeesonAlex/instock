@@ -1,6 +1,8 @@
 import React from 'react';
 import './inventory.scss';
 import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg';
+//import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Dropdown extends React.Component {
     state = {
@@ -10,8 +12,8 @@ class Dropdown extends React.Component {
         event.preventDefault();
         {this.state.showMenu ? this.setState({showMenu: false}) : this.setState({showMenu: true})}    
     }
+
     render() {
-        //console.log(this)
         return (
             <div className="dropdown">
                 <button className="dropdown__kebab" onClick={this.showMenu} type="button">
@@ -20,7 +22,7 @@ class Dropdown extends React.Component {
             {
                 this.state.showMenu ? (
                     <div className="dropdown__remove">
-                        <button className="dropdown__remove--button">Remove</button>
+                        <button className="dropdown__remove--button" type="click" onClick={()=>{this.props.removeItem(this.props.id)}}>Remove</button>
                     </div>
                 ) : ( null )
             }
