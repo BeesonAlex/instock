@@ -31,12 +31,10 @@ class WarehouseDetails extends Component {
     };
 
     componentDidMount() {
-
-        const { id } = this.props.match.params;
-
+        const {id} = this.props.match.params;
         axios.get(`http://localhost:8080/data/inventory/`)
             .then(response => {
-                const allInventory = response.data.inventoryArray;
+                let allInventory = response.data.inventoryArray;
                 this.setState({allInventory});
                 const localInventory = allInventory.filter((inventory) => {
                     return (inventory.warehouseId === this.props.match.params.id)
@@ -48,13 +46,25 @@ class WarehouseDetails extends Component {
             });
         axios.get(`http://localhost:8080/data/warehouses/${id}`)
             .then(response => {
-                const locationDetails = response.data.targetWarehouse;
+                let locationDetails = response.data.targetWarehouse;
                 this.setState({locationDetails});
             })
             .catch(error => {
                 console.log(error);
             });
     };
+
+    removeItem = (id) => {
+        axios.delete(`http://localhost:8080/data/inventory/${id}`)
+            .then(response => {
+                let allInventory = response.data;
+                this.setState({allInventory});
+                console.log(allInventory)
+        })
+            .catch(error => {
+            console.log(error)
+        })
+    }
 
     render() {
         return (

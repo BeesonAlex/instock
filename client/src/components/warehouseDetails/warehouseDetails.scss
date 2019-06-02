@@ -2,6 +2,10 @@
 @import '../../fonts.scss';
 @import '../../App.scss';
 
+* {
+    font-weight: 500;
+}
+
 .warehouseDetails {
     padding:1.5rem 1rem 1.5rem 1rem;
     &__divider {
@@ -13,10 +17,16 @@
             margin:1.5rem 0rem 1.5rem 0rem;
             display: flex;
         }
+        @include desktop {
+            margin: 1.5rem 0rem 1.5rem 0rem;
+        }
     }
     &__title {
         display:flex;
         @include m-h1-header;
+        @include tablet {
+            @include h1-header;
+        }
     }
     &__backArrow {
         margin-right:1rem;
@@ -25,7 +35,7 @@
         }
     }
     &__address {
-        margin-top:1rem;
+        margin-top:1.5rem;
         @include m-paragraph;
         &--label {
             @include m-h2-header;
@@ -35,13 +45,20 @@
             margin-top:0.5rem;
             line-height:1.375rem;
         }
+        &--suite {
+            font-style: italic;
+        }
         &--city {
             margin-top:1rem;
             line-height:1.375rem;
         }
+        &--postal-code {
+            font-style: italic;
+        }
         @include tablet {
             width:55%;
             margin-top:0;
+            @include paragraph;
         }
     }
     &__contact {
@@ -55,20 +72,27 @@
             margin-top:0.5rem;
             line-height:1.375rem;
         }
+        &--job-title {
+            font-style: italic;
+        }
         &--phone {
             margin-top:1rem;
             line-height:1.375rem;
         }
+        &--email {
+            font-style: italic;
+        }
         @include tablet {
             width:45%;
             margin-top:0;
+            @include paragraph;
         }
     }
     @include tablet {
-        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
     }
     @include desktop {
-        padding: 1.5rem 11.25rem 1.5rem 11.25rem;
+        padding: 2.5rem 11.25rem 1.5rem 11.25rem;
     }
 }
 
