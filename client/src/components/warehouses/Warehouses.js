@@ -38,7 +38,7 @@ export class Warehouses extends Component {
       axios.get(`http://localhost:8080/data/warehouses`)
          .then(response => {
             this.setState({
-               warehouses: response.data.warehouseArray,
+               warehouses: response.data.warehouseArray
             })
          })
          .catch(error => {
@@ -46,17 +46,43 @@ export class Warehouses extends Component {
          })
 	}
 
-	// componentDidUpdate() {
-	// 	axios.post(`http://localhost:8080/data/warehouses`)
-	// 		.then(response => {
-	// 			this.setState({
-	// 				warehouses: response.data.warehouseArray,
-	// 			})
-	// 		})
-	// 		.catch(error => {
-	// 			console.log(error)
-	// 		})
-	// }
+	onSubmitHandler = event => {
+		event.preventDefault();
+		console.log(event.target);
+		const postInfo = {
+			warehouseName: event.target.warehouse_input.value,
+			address: event.target.address_input.value,
+			location: event.target.location_dropdown.value,
+			contact: event.target.contact_input.value,
+			position: event.target.position_input.value,
+			phNumber: event.target.phNumber_input.value,
+			email: event.target.email_input.value,
+			description: event.target.item_description.value
+		}
+
+		const newWarehouse = 
+			axios
+				.post(`http://localhost:8080/data/warehouses/`, postInfo)
+				.then(res => {
+					axios
+						.get(`http://localhost:8080/data/warehouses/`)
+						.then(res => {
+							console.log(res.data);
+							this.setState({
+								warehouses: [...this.state.warehouses, newWarehouse]
+							});
+						});
+				});
+		this.closeModalHandler();
+	};
+
+	componentDidUpdate() {
+		axios
+			.get(`http://localhost:8080/data/warehouses/`)
+			.then(res => {
+				this.setState({ warehouses: res.data.warehouseArray });
+			});
+	};
 	
 	openModalHandler = () => {
 		this.setState({
@@ -105,21 +131,20 @@ export class Warehouses extends Component {
 				<div className={modalShowHide}>
 					<WarehouseModal
 						className="modal"
-						show={this.state.isShowing}
-						close={this.closeModalHandler}>
+						show={this.state.isShowing}>
 							<div className="main-modal-div">
-								<form className="modal-form" id="modal-form">
+							<form className="modal-form" onSubmit={this.onSubmitHandler}>
 									<div className="first-form-div">
 										<div className="warehouse-div">
 											<label className="warehouse-label" htmlFor="warehouse-input">
 												WAREHOUSE
 											</label>
-											<input className="warehouse-input" type="text" name="warehouse-input" id="warehouse-input" placeholder="Name & ID" />
+											<input className="warehouse-input" type="text" name="warehouse_input" placeholder="Name & ID" />
 										</div>
 										<div className="empty-div">
 											<label className="empty-label" htmlFor="empty-input">
 											</label>
-											<input className="empty-input" type="text" name="empty-input" id="empty-input" placeholder="" />
+											<input className="empty-input" type="text" name="empty-input" placeholder="" />
 										</div>
 									</div>
 									<div className="second-form-div">
@@ -127,13 +152,13 @@ export class Warehouses extends Component {
 											<label className="address-label" htmlFor="address-input">
 												ADDRESS
 											</label>
-											<input className="address-input" type="text" name="address-input" id="address-input" placeholder="Enter Address" />
+											<input className="address-input" type="text" name="address_input" placeholder="Enter Address" />
 										</div>
 										<div className="location-div">
 											<label className="location-label" htmlFor="location-dropdown">
 												LOCATION
 											</label>
-											<select className="location-dropdown" name="location-dropdown" id="location-dropdown">
+											<select className="location-dropdown" name="location_dropdown">
 												<option value="Toronto">Toronto, CAN</option>
 												<option value="NewYorkCity">New York City, USA</option>
 												<option value="MexicoCity">Mexico City, MEX</option>
@@ -145,13 +170,13 @@ export class Warehouses extends Component {
 											<label className="contact-label" htmlFor="contact-input">
 												CONTACT NAME
 											</label>
-											<input className="contact-input" type="text" name="contact-input" id="contact-input" placeholder="Enter Name" />
+											<input className="contact-input" type="text" name="contact_input" placeholder="Enter Name" />
 										</div>
 										<div className="position-div">
 											<label className="position-label" htmlFor="position-input">
 												POSITION
 											</label>
-											<input className="position-input" type="text" name="position-input" id="position-input" placeholder="Enter Position" />
+											<input className="position-input" type="text" name="position_input" placeholder="Enter Position" />
 										</div>
 									</div>
 									<div className="forth-form-div">
@@ -159,20 +184,24 @@ export class Warehouses extends Component {
 											<label className="phNumber-label" htmlFor="phNumber-switch">
 												PHONE NUMBER
 											</label>
-											<input className="phNumber-input" type="text" name="phNumber-input" id="phNumber-input" placeholder="(000) 000-0000" />
+											<input className="phNumber-input" type="text" name="phNumber_input" placeholder="(000) 000-0000" />
 										</div>
 										<div className="email-div">
 											<label className="email-label" htmlFor="email-input">
 												EMAIL
 											</label>
-											<input className="email-input" type="text" name="email-input" id="email-input" placeholder="email@instock.com" />
+											<input className="email-input" type="text" name="email_input" placeholder="email@instock.com" />
 										</div>
 									</div>
 									<div className="fifth-form-div">
 										<label className="item-label" htmlFor="item-description">
 											ITEM DESCRIPTION
 										</label>
-									<textarea className="item-description" name="item-description" id="item-description" cols="30" rows="10" placeholder="Use Commas to Separate Each Category" />
+									<textarea className="item-description" name="item_description" cols="30" rows="10" placeholder="Use Commas to Separate Each Category" />
+									</div>
+									<div className="modal-footer">
+									<button className="btn-whCancel" type="button" onClick={this.closeModalHandler}>CANCEL</button>
+									<button className="btn-whSave" type="submit">SAVE</button>
 									</div>
 								</form>
 							</div>

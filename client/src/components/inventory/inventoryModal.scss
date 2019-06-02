@@ -33,7 +33,7 @@
       background-color: $white;
       overflow-y: scroll;
       animation-name: modalShow;
-      animation-duration: 1s;
+      animation-duration: 0.75s;
       animation-timing-function: ease-in;
 
       @include tablet {
@@ -52,9 +52,9 @@
       .modal-header {
          @include m-h1-header;
          width: 80%;
-         margin-left: 10%;
-         margin-bottom: 0.75rem;
          margin-top: 2rem;
+         margin-bottom: 0.75rem;
+         margin-left: 10%;
 
          @include tablet {
             @include h1-header;
@@ -76,7 +76,6 @@
             .modal-form {
                display: flex;
                flex-direction: column;
-               // align-items: flex-end;
                width: 100%;
 
                .first-form-div {
@@ -318,8 +317,6 @@
             height: 3.5rem;
             background-color: white;
             color: #0065AD;
-            font-size: 1.25rem;
-            font-family:'Avenir Next Demi-Bold', sans-serif;
 
             @include tablet {
                width: 35%;
@@ -339,9 +336,7 @@
             height: 3.5rem;
             background-color: #0065AD;
             color: white;
-            font-size: 1.25rem;
-            font-family:'Avenir Next Demi-Bold', sans-serif;
-
+                        
             @include tablet {
                width: 35%;
             }

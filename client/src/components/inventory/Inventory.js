@@ -124,8 +124,7 @@ class Inventory extends React.Component {
 					<div className={modalShowHide}>
 						<InventoryModal
 							className="modal"
-							show={this.state.isShowing}
-							close={this.closeModalHandler}>
+							show={this.state.isShowing}>
 							<div className="main-modal-div">
 								<form className="modal-form" onSubmit={this.onSubmitHandler}>
 									<div className="first-form-div">
@@ -172,7 +171,7 @@ class Inventory extends React.Component {
 										<textarea className="item-description" name="item_description" cols="30" rows="10" placeholder="(Optional)"></textarea>
 									</div>
 									<div className="modal-footer">
-										<button className="btn-cancel" onClick={this.close}>
+										<button className="btn-cancel" type="button" onClick={this.closeModalHandler}>
 											CANCEL
           							</button>
 										<button type="submit" className="btn-save">

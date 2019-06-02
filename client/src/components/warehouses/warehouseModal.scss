@@ -12,7 +12,7 @@
 }
 
 .modal-wrapper-show {
-   z-index: 10;
+   z-index: 99;
    position: fixed;
    top: 0;
    background: rgba(0, 0, 0, 0.6);
@@ -32,7 +32,7 @@
       background-color: white;
 		overflow-y: scroll;
 		animation-name: modalShow;
-      animation-duration: 1s;
+      animation-duration: 0.75s;
 		animation-timing-function: ease-in;
 		
 		@include tablet {
@@ -51,9 +51,9 @@
       .modal-header {
          @include m-h1-header;
          width: 80%;
-         margin-left: 10%;
          margin-top: 2rem;
          margin-bottom: 0.75rem;
+         margin-left: 10%;
 			
 			@include tablet {
             @include h1-header;
@@ -366,6 +366,7 @@
          display: flex;
          flex-direction: column-reverse;
          width: 100%;
+         margin-top: 2rem;
 			
 			@include tablet {
             flex-direction: row;
@@ -373,57 +374,41 @@
             width: 100%;
          }
 
-         .btn-cancel {
+         .btn-whCancel {
             border: none;
             border-radius: 5px;
             width: 100%;
             height: 3.5rem;
             background-color: white;
             color: #0095FF;
-				font-size: 1.25rem;
-				font-family:'Avenir Next Demi-Bold', sans-serif;
 
             @include tablet {
                width: 35%;
             }
-
-            @include desktop {
-               font-family: 'Avenir Next Bold';
-               font-weight: bold;
-               font-size: 2.25rem;
-            }
          }
 
-         .btn-cancel:hover {
-            border: 1px solid #0065AD;
-            background-color: #0065AD;
+         .btn-whCancel:hover {
+            border: 1px solid #0095FF;
+            background-color: #0095FF;
             color: white;
          }
 
-         .btn-save {
-            border: 1px solid #0095FF;
+         .btn-whSave {
+            border: 1px solid #0065AD;
             border-radius: 5px;
             width: 100%;
             height: 3.5rem;
-            background-color: #0095FF;
+            background-color: #0065AD;
             color: white;
-				font-size: 1.25rem;
-				font-family:'Avenir Next Demi-Bold', sans-serif;
 
             @include tablet {
                width: 35%;
             }
-
-            @include desktop {
-               font-family: 'Avenir Next Bold';
-               font-weight: bold;
-               font-size: 2.25rem;
-            }
          }
 
-         .btn-save:hover {
-            border: 1px solid #0065AD;
-            background-color: #0065AD;
+         .btn-whSave:hover {
+            border: 1px solid #0095FF;
+            background-color: #0095FF;
          }
       }
 	}
