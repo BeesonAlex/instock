@@ -93,7 +93,7 @@ const warehouseArray = [
         name: "Punder Mifflin",
         address: {
             street: "123 Fake Street W",
-            suiteNum: "suite 201",
+            suiteNum: "Suite 201",
             city: "Toronto",
             province: "Ontario",
             postal: "M6N4B7"
@@ -111,7 +111,7 @@ const warehouseArray = [
         name: "The Place",
         address: {
             street: "667 Some Street W",
-            suiteNum: "suite 331",
+            suiteNum: "Suite 331",
             city: "Toronto",
             province: "Ontario",
             postal: "M6G3L7"
@@ -129,7 +129,7 @@ const warehouseArray = [
         name: "Stocker",
         address: {
             street: "8893 King Street W",
-            suiteNum: "suite 451",
+            suiteNum: "Suite 451",
             city: "Toronto",
             province: "Ontario",
             postal: "M6N4B7"
@@ -147,7 +147,7 @@ const warehouseArray = [
         name: "Box Factory",
         address: {
             street: "898 Dock Street W",
-            suiteNum: "suite 201",
+            suiteNum: "Suite 201",
             city: "Toronto",
             province: "Ontario",
             postal: "M6N4B7"
@@ -165,7 +165,7 @@ const warehouseArray = [
         name: "Janet Planet",
         address: {
             street: "172 Dat Street W",
-            suiteNum: "suite 891",
+            suiteNum: "Suite 891",
             city: "Toronto",
             province: "Ontario",
             postal: "M6H3L0"

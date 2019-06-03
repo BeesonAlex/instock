@@ -1,12 +1,11 @@
 @import '../../colors.scss';
 @import '../../fonts.scss';
 @import '../../App.scss';
-
 .nav-bar {
     display: flex; 
     flex-direction: column;
     align-items: center;
-    height: 5rem;
+    height: 5.5rem;
     background-color: $black;
     color: $white;
     @include tablet {
@@ -23,48 +22,59 @@
         } 
         @include desktop {
             margin: 2rem 0;
+            margin-right: 1rem;
         } 
     }
     &__tabs {
         display: flex;
         list-style-type: none;
+        justify-content: space-around;
         width: 100%;
         padding: 0;
         margin: 0;
         @include tablet {
             height: 100%;
-            align-items: flex-end;
+            width: 15rem;
         } 
         @include desktop {
             height: 100%;
             align-items: flex-end;
+            width: 20rem;
         } 
+        & a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
         &--inventory, &--locations {
+            &:hover {
+                color: $white;
+                border-bottom: 4px solid $mercury;
+            }
+            @include m-h2-header;
             width: 100%;
             text-align: center;
             font-size: 1rem;
             height: 100%;
+            padding-bottom: 8px;
+            color: $silver;
             @include tablet {
-                height: 2.7rem;
+                @include subheader;
+                height: 100%;
+                padding-top: 2rem;
                 width: 6rem;
                 margin-left: 3rem;
+                color: $silver;
             } 
             @include desktop {
-                height: 2.7rem;
-                width: 80px;
-                margin-left: 54px;
+                @include subheader;
+                height: 100%;
+                padding-top: 2rem;
+                width: 6rem;
+                margin-left: 3rem;
+                color: $silver;
             } 
-        }
-        &--link {
-            color: $white;
-            text-decoration: none;
-        }
-        &--locations, &--inventory {
-            padding-bottom: 8px;
-        }
-        &--current {
-            border-bottom: 4px solid $mercury;
-            font-family: 'Avenir Next Demi'
         }
     }
 }

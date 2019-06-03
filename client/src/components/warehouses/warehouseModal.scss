@@ -1,0 +1,417 @@
+@import '../../colors.scss';
+@import '../../fonts.scss';
+@import '../../App.scss';
+
+@keyframes modalShow {
+	from {top: -700px;}
+	to {top: 0;}
+}
+
+.modal-wrapper-hide {
+   display: none;
+}
+
+.modal-wrapper-show {
+   z-index: 99;
+   position: fixed;
+   top: 0;
+   background: rgba(0, 0, 0, 0.6);
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+	align-items: flex-start;
+	animation-name: modalShow;
+   animation-duration: 0.5s;
+
+   .modal-form-wrapper {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: white;
+		overflow-y: scroll;
+		animation-name: modalShow;
+      animation-duration: 0.75s;
+		animation-timing-function: ease-in;
+		
+		@include tablet {
+         width: 65%;
+         height: 90%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+		}
+		
+		@include desktop {
+         width: 576px;
+         height: 624px;
+      }
+
+      .modal-header {
+         @include m-h1-header;
+         width: 80%;
+         margin-top: 2rem;
+         margin-bottom: 0.75rem;
+         margin-left: 10%;
+			
+			@include tablet {
+            @include h1-header;
+         }
+      }
+
+      .modal-body {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         width: 80%;
+         margin-bottom: 5%;
+         margin-left: 10%;
+
+         .main-modal-div {
+            display: flex;
+            width: 100%;
+
+            .modal-form {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+
+               .first-form-div {
+                  display: flex;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+                     justify-content: space-between;
+                  }
+
+                  .warehouse-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .warehouse-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .warehouse-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+								outline: none;
+								
+								@include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+
+                  .street-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .street-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .street-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+								outline: none;
+								
+								@include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+               }
+
+               .second-form-div {
+                  display: flex;
+						flex-direction: column;
+						
+						@include tablet {
+                  	flex-direction: row;
+                     justify-content: space-between;
+                  }
+
+                  .city-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .city-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .city-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+
+                  .province-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .province-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .province-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+               }
+
+               .third-form-div {
+                  display: flex;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+                     justify-content: space-between;
+                  }
+
+                  .name-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .name-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .name-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+
+                  .title-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                        justify-content: space-around;
+                     }
+
+                     .title-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .title-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+               }
+
+               .forth-form-div {
+                  display: flex;
+						flex-direction: column;
+						
+						@include tablet {
+                     flex-direction: row;
+							justify-content: space-between;
+                  }
+
+                  .phNumber-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .phNumber-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .phNumber-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+
+                  .email-div {
+                     display: flex;
+                     flex-direction: column;
+							margin-bottom: 1rem;
+							
+							@include tablet {
+                        width: 45%;
+                     }
+
+                     .email-label {
+								@include m-label;
+                        margin: 0.5rem 0;
+                     }
+
+                     .email-input {
+                        border: 2px solid $text-field-border;
+                        border-radius: 5px;
+                        height: 3rem;
+                        text-indent: 1rem;
+                        outline: none;
+
+                        @include tablet {
+                           width: 100%;
+                        }
+                     }
+                  }
+               }
+
+               .fifth-form-div {
+                  display: flex;
+						flex-direction: column;
+						
+						@include tablet {
+                     width: 100%;
+                  }
+
+                  .categories-label {
+							@include m-label;
+                     margin: 0.5rem 0;
+                  }
+
+                  .categories-description {
+                     border: 2px solid $text-field-border;
+                     border-radius: 5px;
+                     height: 5rem;
+                     padding-top: 1rem;
+                     text-indent: 1rem;
+                     outline: none;
+                  }
+               }
+            }
+         }
+      }
+
+      .modal-footer {
+         display: flex;
+         flex-direction: column-reverse;
+         width: 100%;
+         margin-top: 2rem;
+			
+			@include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 100%;
+         }
+
+         .btn-whCancel {
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: white;
+            color: #0095FF;
+
+            @include tablet {
+               width: 35%;
+            }
+         }
+
+         .btn-whCancel:hover {
+            border: 1px solid #0095FF;
+            background-color: #0095FF;
+            color: white;
+         }
+
+         .btn-whSave {
+            border: 1px solid #0065AD;
+            border-radius: 5px;
+            width: 100%;
+            height: 3.5rem;
+            background-color: #0065AD;
+            color: white;
+
+            @include tablet {
+               width: 35%;
+            }
+         }
+
+         .btn-whSave:hover {
+            border: 1px solid #0095FF;
+            background-color: #0095FF;
+         }
+      }
+	}
+	
+	.modal-form-wrapper::-webkit-scrollbar {
+   	display: none;
+	}
+}

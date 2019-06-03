@@ -1,20 +1,27 @@
 import React from 'react';
-import logo from '../../assets/Logo/Logo-instock.svg'
-import './header.scss'
-import '../../App.scss'
+import { Link, withRouter, NavLink } from 'react-router-dom';
+import logo from '../../assets/Logo/Logo-instock.svg';
+import './header.scss';
+import '../../App.scss';
 
  function Header() {
     return (
         <header>
             <nav className="nav-bar">
-                <img className="nav-bar__logo" src={logo} alt=""/>
+                <Link to={"/"}>
+                    <img className="nav-bar__logo" src={logo} alt=""/>
+                </Link>
                 <ul className="nav-bar__tabs">
-                    <li className="nav-bar__tabs--inventory nav-bar__tabs--current">Inventory</li>
-                    <li className="nav-bar__tabs--locations">Locations</li>
+                    <NavLink to={"/inventory"} activeClassName='nav-bar__tabs--current'>
+                        <li className="nav-bar__tabs--inventory">Inventory</li>
+                    </NavLink>
+                    <NavLink to={"/warehouses"} activeClassName='nav-bar__tabs--current'>
+                        <li className="nav-bar__tabs--locations" >Locations</li>
+                    </NavLink>
                 </ul>
             </nav>
         </header>
     )
 }
 
-export default Header;
+export default withRouter(Header);
