@@ -68,17 +68,20 @@
     }
 
     .warehouses-item-wrapper {
+        .table-label{
+            @include label;
+        }
 
         #table-labels {
             display: none;
             margin-top: 0rem;
             color: $silver;
-
-            @include m-label;
+            @include label;
 
             @include desktop {
                 display: flex;
                 border-bottom: none;
+                color: $silver;
             }
 
             @include label;

@@ -52,7 +52,7 @@ export class InventoryDetails extends Component {
                         <Link to="/inventory">
                             <img className="title__back-button" src={backIcon} alt="back-icon" />
                         </Link>
-                        <h1 className="section__header">Product Name</h1>
+                        <h1 className="section__header">{this.state.inventoryDetails.name}</h1>
                     </div>
 
                     {this.state.inventoryDetails.isInstock ? <div className="title__instock-section instock">In Stock</div> : <div className="title__instock-section out-of-stock">Out of Stock</div>}

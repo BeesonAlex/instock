@@ -1,8 +1,6 @@
 import React from 'react';
 import './inventory.scss';
 import kebabIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg';
-//import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 class Dropdown extends React.Component {
     state = {
@@ -10,8 +8,8 @@ class Dropdown extends React.Component {
     }
     showMenu = (event) => {
         event.preventDefault();
-        {this.state.showMenu ? this.setState({showMenu: false}) : this.setState({showMenu: true})}    
-    }
+        this.state.showMenu ? this.setState({showMenu: false}) : this.setState({showMenu: true})}    
+    
 
     render() {
         return (
