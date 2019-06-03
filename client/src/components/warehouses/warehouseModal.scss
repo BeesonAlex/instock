@@ -113,8 +113,8 @@
                      }
                   }
 
-                  .empty-div {
-                     display: none;
+                  .street-div {
+                     display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
 							
@@ -122,12 +122,12 @@
                         width: 45%;
                      }
 
-                     .empty-label {
+                     .street-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     .empty-input {
+                     .street-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -150,7 +150,7 @@
                      justify-content: space-between;
                   }
 
-                  .address-div {
+                  .city-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -159,12 +159,12 @@
                         width: 45%;
                      }
 
-                     .address-label {
+                     .city-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     .address-input {
+                     .city-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -177,7 +177,7 @@
                      }
                   }
 
-                  .location-div {
+                  .province-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -186,22 +186,20 @@
                         width: 45%;
                      }
 
-                     .location-label {
+                     .province-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     .location-dropdown {
+                     .province-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
-                        height: 4rem;
-                        font-size: 1.25rem;
+                        height: 3rem;
                         text-indent: 1rem;
                         outline: none;
 
                         @include tablet {
                            width: 100%;
-                           height: 3rem;
                         }
                      }
                   }
@@ -216,7 +214,7 @@
                      justify-content: space-between;
                   }
 
-                  .contact-div {
+                  .name-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -225,12 +223,12 @@
                         width: 45%;
                      }
 
-                     .contact-label {
+                     .name-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     .contact-input {
+                     .name-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -243,7 +241,7 @@
                      }
                   }
 
-                  .position-div {
+                  .title-div {
                      display: flex;
                      flex-direction: column;
 							margin-bottom: 1rem;
@@ -253,12 +251,12 @@
                         justify-content: space-around;
                      }
 
-                     .position-label {
+                     .title-label {
 								@include m-label;
                         margin: 0.5rem 0;
                      }
 
-                     .position-input {
+                     .title-input {
                         border: 2px solid $text-field-border;
                         border-radius: 5px;
                         height: 3rem;
@@ -344,12 +342,12 @@
                      width: 100%;
                   }
 
-                  .item-label {
+                  .categories-label {
 							@include m-label;
                      margin: 0.5rem 0;
                   }
 
-                  .item-description {
+                  .categories-description {
                      border: 2px solid $text-field-border;
                      border-radius: 5px;
                      height: 5rem;

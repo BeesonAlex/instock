@@ -51,37 +51,29 @@ export class Warehouses extends Component {
 		console.log(event.target);
 		const postInfo = {
 			warehouseName: event.target.warehouse_input.value,
-			address: event.target.address_input.value,
-			location: event.target.location_dropdown.value,
-			contact: event.target.contact_input.value,
-			position: event.target.position_input.value,
-			phNumber: event.target.phNumber_input.value,
+			street: event.target.street_input.value,
+			city: event.target.city_input.value,
+			province: event.target.province_input.value,
+			contactName: event.target.name_input.value,
+			title: event.target.title_input.value,
+			phone: event.target.phNumber_input.value,
 			email: event.target.email_input.value,
-			description: event.target.item_description.value
+			inventoryCategories: event.target.categories_description.value
 		}
-
-		const newWarehouse = 
-			axios
-				.post(`http://localhost:8080/data/warehouses/`, postInfo)
-				.then(res => {
-					axios
-						.get(`http://localhost:8080/data/warehouses/`)
-						.then(res => {
-							console.log(res.data);
-							this.setState({
-								warehouses: [...this.state.warehouses, newWarehouse]
-							});
-						});
-				});
-		this.closeModalHandler();
-	};
-
-	componentDidUpdate() {
+ 
 		axios
-			.get(`http://localhost:8080/data/warehouses/`)
+			.post(`http://localhost:8080/data/warehouses/`, postInfo)
 			.then(res => {
-				this.setState({ warehouses: res.data.warehouseArray });
+				axios
+					.get(`http://localhost:8080/data/warehouses/`)
+					.then(res => {
+						console.log(res.data);
+						this.setState({
+							warehouses: res.data.warehouseArray
+						});
+					});
 			});
+		this.closeModalHandler();
 	};
 	
 	openModalHandler = () => {
@@ -141,42 +133,39 @@ export class Warehouses extends Component {
 											</label>
 											<input className="warehouse-input" type="text" name="warehouse_input" placeholder="Name & ID" />
 										</div>
-										<div className="empty-div">
-											<label className="empty-label" htmlFor="empty-input">
+										<div className="street-div">
+											<label className="street-label" htmlFor="street-input">
+												STREET
 											</label>
-											<input className="empty-input" type="text" name="empty-input" placeholder="" />
+											<input className="street-input" type="text" name="street_input" placeholder="Enter Street" />
 										</div>
 									</div>
 									<div className="second-form-div">
-										<div className="address-div">
-											<label className="address-label" htmlFor="address-input">
-												ADDRESS
+										<div className="city-div">
+											<label className="city-label" htmlFor="city-input">
+												CITY
 											</label>
-											<input className="address-input" type="text" name="address_input" placeholder="Enter Address" />
+											<input className="city-input" type="text" name="city_input" placeholder="Enter City" />
 										</div>
-										<div className="location-div">
-											<label className="location-label" htmlFor="location-dropdown">
-												LOCATION
+										<div className="province-div">
+											<label className="province-label" htmlFor="province-input">
+												PROVINCE
 											</label>
-											<select className="location-dropdown" name="location_dropdown">
-												<option value="Toronto">Toronto, CAN</option>
-												<option value="NewYorkCity">New York City, USA</option>
-												<option value="MexicoCity">Mexico City, MEX</option>
-											</select>
+										<input className="province-input" type="text" name="province_input" placeholder="Enter Province" />
 										</div>
 									</div>
 									<div className="third-form-div">
-										<div className="contact-div">
-											<label className="contact-label" htmlFor="contact-input">
+										<div className="name-div">
+											<label className="name-label" htmlFor="name-input">
 												CONTACT NAME
 											</label>
-											<input className="contact-input" type="text" name="contact_input" placeholder="Enter Name" />
+											<input className="name-input" type="text" name="name_input" placeholder="Enter Name" />
 										</div>
-										<div className="position-div">
-											<label className="position-label" htmlFor="position-input">
-												POSITION
+										<div className="title-div">
+											<label className="title-label" htmlFor="title-input">
+												TITLE
 											</label>
-											<input className="position-input" type="text" name="position_input" placeholder="Enter Position" />
+											<input className="title-input" type="text" name="title_input" placeholder="Enter Title" />
 										</div>
 									</div>
 									<div className="forth-form-div">
@@ -194,10 +183,10 @@ export class Warehouses extends Component {
 										</div>
 									</div>
 									<div className="fifth-form-div">
-										<label className="item-label" htmlFor="item-description">
-											ITEM DESCRIPTION
+										<label className="categories-label" htmlFor="categories-description">
+											CATEGORIES
 										</label>
-									<textarea className="item-description" name="item_description" cols="30" rows="10" placeholder="Use Commas to Separate Each Category" />
+										<textarea className="categories-description" name="categories_description" cols="30" rows="10" placeholder="Use Commas to Separate Each Category" />
 									</div>
 									<div className="modal-footer">
 									<button className="btn-whCancel" type="button" onClick={this.closeModalHandler}>CANCEL</button>
