@@ -1,7 +1,7 @@
 import React from 'react';
 import './warehouseModal.scss';
 
-const WarehouseModal = (props) => {
+const WarehouseModal = ({children}) => {
 	return (
 		<div className="modal-wrapper">
 			<div className="modal-form-wrapper" >
@@ -10,12 +10,8 @@ const WarehouseModal = (props) => {
 				</div>
 				<div className="modal-body">
 					<div>
-						{props.children}
+						{children}
 					</div>
-				</div>
-				<div className="modal-footer">
-					<button className="btn-cancel" onClick={props.close}>CANCEL</button>
-					<button className="btn-save">SAVE</button>
 				</div>
 			</div>
 		</div>

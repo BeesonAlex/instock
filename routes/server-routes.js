@@ -94,9 +94,9 @@ const createNewWarehouse = (req, res) => {
     	},
    	contact: {
       	name: contactName,
-      	position: title,
-      		phone,
-      		email
+      	title,
+      	phone,
+      	email
     	},
    	inventoryCategories
   	};
