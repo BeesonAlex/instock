@@ -39,12 +39,13 @@ class Inventory extends React.Component {
 		const postInfo = {
 			name: event.target.product_input.value,
 			lastOrdered: event.target.order_date_input.value,
-			location: event.target.city_input.value & ', ' & event.target.country_dropdown.value,
+			city: event.target.city_input.value,
+			province:event.target.province_input.value,
 			quantity: event.target.quantity_input.value,
 			description: event.target.item_description.value
 		}
 
-		const newItem = axios
+		axios
 			.post(`http://localhost:8080/data/inventory/`, postInfo)
 			.then(res => {
 				axios
@@ -52,20 +53,11 @@ class Inventory extends React.Component {
 					.then(res => {
 						console.log(res.data);
 						this.setState({
-							inventory: [...this.state.inventory, newItem]
-						});
+              			inventory: res.data.inventoryArray
+            		});
 					});
 			});
 		this.closeModalHandler();
-	};
-
-	componentDidUpdate() {
-		axios
-			.get(`http://localhost:8080/data/inventory/`)
-			.then(res => {
-				const inventory = res.data.inventoryArray;
-				this.setState({ inventory });
-			});
 	};
 	
 	openModalHandler = () => {
@@ -124,8 +116,7 @@ class Inventory extends React.Component {
 					<div className={modalShowHide}>
 						<InventoryModal
 							className="modal"
-							show={this.state.isShowing}
-							close={this.closeModalHandler}>
+							show={this.state.isShowing}>
 							<div className="main-modal-div">
 								<form className="modal-form" onSubmit={this.onSubmitHandler}>
 									<div className="first-form-div">
@@ -143,13 +134,9 @@ class Inventory extends React.Component {
 											<label className="city-label" htmlFor="city-input">CITY</label>
 											<input className="city-input" type="text" name="city_input" placeholder="City" />
 										</div>
-										<div className="country-div">
-											<label className="country-label" htmlFor="country-dropdown">COUNTRY</label>
-											<select className="country-dropdown" name="country_dropdown">
-												<option value="Canada">Canada</option>
-												<option value="USA">USA</option>
-												<option value="Mexico">Mexico</option>
-											</select>
+										<div className="province-div">
+											<label className="province-label" htmlFor="province-input">PROVINCE</label>
+											<input className="province-input" type="text" name="province_input" placeholder="Province" />
 										</div>
 									</div>
 									<div className="third-form-div">
@@ -172,7 +159,7 @@ class Inventory extends React.Component {
 										<textarea className="item-description" name="item_description" cols="30" rows="10" placeholder="(Optional)"></textarea>
 									</div>
 									<div className="modal-footer">
-										<button className="btn-cancel" onClick={this.close}>
+										<button className="btn-cancel" type="button" onClick={this.closeModalHandler}>
 											CANCEL
           							</button>
 										<button type="submit" className="btn-save">
