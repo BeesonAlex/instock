@@ -36,7 +36,7 @@ class WarehouseDetails extends Component {
             .then(response => {
                 let allInventory = response.data.inventoryArray;
                 this.setState({allInventory});
-                const localInventory = allInventory.filter((inventory) => {
+                let localInventory = allInventory.filter((inventory) => {
                     return (inventory.warehouseId === this.props.match.params.id)
                 })
                 this.setState({localInventory});
@@ -57,13 +57,24 @@ class WarehouseDetails extends Component {
     removeItem = (id) => {
         axios.delete(`http://localhost:8080/data/inventory/${id}`)
             .then(response => {
-                let allInventory = response.data;
-                this.setState({allInventory});
-                console.log(allInventory)
-        })
+                const allInventory = response.data;
+                this.setState({allInventory})
+                axios.get(`http://localhost:8080/data/inventory/`)
+                .then(response => {
+                    let allInventory = response.data.inventoryArray;
+                    this.setState({allInventory});
+                    let localInventory = allInventory.filter((inventory) => {
+                        return (inventory.warehouseId === this.props.match.params.id)
+                    })
+                    this.setState({localInventory});
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            })
             .catch(error => {
             console.log(error)
-        })
+            })
     }
 
     render() {
